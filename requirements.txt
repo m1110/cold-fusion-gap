@@ -2,3 +2,4 @@ numpy
 scipy
 matplotlib
 jupyter
+numba   # optional, speeds up notebook 03 ~30x
