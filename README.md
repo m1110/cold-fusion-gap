@@ -6,6 +6,7 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 |---|---|
 | `notebooks/01_rate_gap.ipynb` | Rate gap (~10^52–53), required effective temperature (65 eV, from a numerical Gamow integral validated against Bosch–Hale to 1–2%), coherence scaling limits, exit-channel constraint, muon catalysis balance, literature check |
 | `notebooks/03_bridge_and_bounds.ipynb` | Quantum solver for the d–d pair's ground state (`cfsolve.py`), validated against D₂ binding/zero-point energy and Koonin–Nauenberg; exact heavy-electron scan; lattice-pair model; extra-screening map bounded by beam data and 1990 neutron limits |
+| `notebooks/04_robustness.ipynb` | Robustness of notebook 03 over 40 variants: screening shape (exponential, Gaussian, step, Yukawa), capped vs harmonic lattice, spacing, Thomas–Fermi length, phonon energy, attempt frequency, weaker null limit |
 | `notebooks/02_screening_anomaly.ipynb` | The electron-screening anomaly in deuterated metals: data, how U_e is extracted, a simulated depth-profile artifact, Debye vs Thomas–Fermi consistency checks, a heavy-electron bridge to cold-fusion rates, the 2025–26 results, proposed decisive experiments |
 
 ## Headline findings
@@ -19,6 +20,8 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 - **Notebook 03:** the solver reproduces D₂ binding to 0.0004 eV and Koonin–Nauenberg's rate (2.5 vs 3 ×10⁻⁶⁴ s⁻¹). Watt-level rates need an electron ~9× heavier (notebook 02 guessed 10×).
 - A deuteron pair at real PdD lattice spacing fuses at ~10⁻¹²⁴ s⁻¹, ~60 orders below a D₂ molecule. **The lattice is the bottleneck, not the screening strength.**
 - If the beam-measured screening extended far enough at rest, it would bind deuterons into a new state 0.07–0.24 Å apart. Wherever that approaches watt-level rates, it would also exceed the 1990 neutron limit (<2×10⁻²⁶ s⁻¹) by ~15 orders. **So at rest the screening can't extend beyond ~0.13–0.16 Å** (for 300–575 eV). Only a heat-only, neutron-free channel escapes that bound.
+
+- **Notebook 04:** across 40 variants, no model reaches watts before crossing the neutron limit. The four that reach 1 W/cm³ all cross the null limit at a shorter range first. **Watts imply neutrons for any screening-plus-confinement mechanism.** The allowed screening range at rest is 0.018–0.315 Å (median 0.137 Å) and is set mainly by the profile shape and the Thomas–Fermi length. Lattice stiffness, phonon energy and attempt frequency barely matter.
 
 ## Caveats
 

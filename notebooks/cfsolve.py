@@ -41,16 +41,33 @@ def V_molecule(mstar=1.0, Eel=None):
     Eel = Eel if Eel is not None else make_Eel()
     return lambda R: mstar*(1/(mstar*R) + Eel(np.minimum(mstar*R, 15.0)))
 
-def V_lattice(d0_A=2.75, phonon_meV=37.0, lam_TF_A=0.574):
-    """Two deuterons in neighbouring lattice sites: Thomas-Fermi screened Coulomb repulsion plus
-    an isotropic harmonic restoring force on the separation (each site at the PdD optical-phonon energy)."""
+def V_lattice(d0_A=2.75, phonon_meV=37.0, lam_TF_A=0.574, confinement="harmonic", barrier_eV=0.23):
+    """Two deuterons in neighbouring lattice sites: Thomas-Fermi screened Coulomb repulsion plus a
+    restoring force on the separation set by the PdD optical-phonon energy.
+    confinement="harmonic": grows without bound; "capped": the same curvature near d0 but levels off
+    at barrier_eV (the site-to-site diffusion barrier), i.e. the lattice stops resisting beyond the saddle."""
     d0 = d0_A/BOHR_A; w = phonon_meV*1e-3/HARTREE_EV; lam = lam_TF_A/BOHR_A
-    return lambda R: np.exp(-R/lam)/R + 0.5*MU_DD*w**2*(R - d0)**2
+    k = MU_DD*w**2
+    if confinement == "harmonic":
+        return lambda R: np.exp(-R/lam)/R + 0.5*k*(R - d0)**2
+    Eb = barrier_eV/HARTREE_EV
+    return lambda R: np.exp(-R/lam)/R + Eb*np.tanh(0.5*k*(R - d0)**2/Eb)
 
-def extra_screening(dU_eV, ell_A):
-    """Additional screening near the pair: dV(R) = -dU exp(-R/ell)."""
-    dU = dU_eV/HARTREE_EV; ell = ell_A/BOHR_A
-    return lambda R: -dU*np.exp(-R/ell)
+PROFILES = {
+    "exponential": lambda x: np.exp(-x),
+    "gaussian":    lambda x: np.exp(-x**2),
+    "step":        lambda x: 1/(1 + np.exp(np.clip((x - 1)/0.1, -700, 700))),
+    "yukawa":      lambda x: -np.expm1(-x)/np.where(x > 0, x, 1e-300),   # (1-e^-x)/x: long-range -q/R tail
+}
+
+def extra_screening(dU_eV, ell_A, shape="exponential"):
+    """Additional screening near the pair: dV(R) = -dU g(R/ell), g(0)=1."""
+    dU = dU_eV/HARTREE_EV; ell = ell_A/BOHR_A; g = PROFILES[shape]
+    return lambda R: -dU*g(R/ell)
+
+def beam_matched_dU(U_meas_eV, ell_A, shape="exponential", R_tp_A=0.004):
+    """Contact strength needed for the profile to equal U_meas at the beam turning point."""
+    return U_meas_eV/PROFILES[shape](np.array(R_tp_A/ell_A))
 
 class Collapse(RuntimeError):
     pass
