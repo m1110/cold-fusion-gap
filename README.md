@@ -7,6 +7,7 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 | `notebooks/01_rate_gap.ipynb` | Rate gap (~10^52–53), required effective temperature (65 eV, from a numerical Gamow integral validated against Bosch–Hale to 1–2%), coherence scaling limits, exit-channel constraint, muon catalysis balance, literature check |
 | `notebooks/03_bridge_and_bounds.ipynb` | Quantum solver for the d–d pair's ground state (`cfsolve.py`), validated against D₂ binding/zero-point energy and Koonin–Nauenberg; exact heavy-electron scan; lattice-pair model; extra-screening map bounded by beam data and 1990 neutron limits |
 | `notebooks/04_robustness.ipynb` | Robustness of notebook 03 over 40 variants: screening shape (exponential, Gaussian, step, Yukawa), capped vs harmonic lattice, spacing, Thomas–Fermi length, phonon energy, attempt frequency, weaker null limit |
+| `notebooks/05_fuels_density_resonance.ipynb` | Other levers: all hydrogen-isotope fuel pairs (molecule and lattice; second solver validation on p+d and H₂/HD binding), p+d with screening in mixed H/D lattices, pycnonuclear density scan, resonant tunneling via exact transfer matrix, proposed experiments |
 | `notebooks/02_screening_anomaly.ipynb` | The electron-screening anomaly in deuterated metals: data, how U_e is extracted, a simulated depth-profile artifact, Debye vs Thomas–Fermi consistency checks, a heavy-electron bridge to cold-fusion rates, the 2025–26 results, proposed decisive experiments |
 
 ## Headline findings
@@ -22,6 +23,8 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 - If the beam-measured screening extended far enough at rest, it would bind deuterons into a new state 0.07–0.24 Å apart. Wherever that approaches watt-level rates, it would also exceed the 1990 neutron limit (<2×10⁻²⁶ s⁻¹) by ~15 orders. **So at rest the screening can't extend beyond ~0.13–0.16 Å** (for 300–575 eV). Only a heat-only, neutron-free channel escapes that bound.
 
 - **Notebook 04:** across 40 variants, no model reaches watts before crossing the neutron limit. The four that reach 1 W/cm³ all cross the null limit at a shorter range first. **Watts imply neutrons for any screening-plus-confinement mechanism.** The allowed screening range at rest is 0.018–0.315 Å (median 0.137 Å) and is set mainly by the profile shape and the Thomas–Fermi length. Lattice stiffness, phonon energy and attempt frequency barely matter.
+
+- **Notebook 05:** p+d is the fastest pair (+8 orders over d+d in a molecule, matching Koonin–Nauenberg; +17 in the lattice) and emits no neutrons. But even with the screening anomaly it peaks at ~10⁻¹²·³ s⁻¹, short of watts, and it emits 5.5 MeV gammas. d+t is *slower* than d+d at rest. Cold metallic deuterium reaches 1 W/cm³ only at ~1.6×10⁴ g/cm³ (~10⁵× PdD). Resonant tunneling adds nothing beyond the sequential kinetics already used. **Every lever that moves orders of magnitude does so by shrinking or lightening the pair.**
 
 ## Caveats
 

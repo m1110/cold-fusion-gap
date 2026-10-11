@@ -60,6 +60,23 @@ PROFILES = {
     "yukawa":      lambda x: -np.expm1(-x)/np.where(x > 0, x, 1e-300),   # (1-e^-x)/x: long-range -q/R tail
 }
 
+MASS_ME = {"p": 1836.15267343, "d": MD_ME, "t": 5496.92153573}
+
+def reduced_mass(a, b):
+    return MASS_ME[a]*MASS_ME[b]/(MASS_ME[a] + MASS_ME[b])
+
+def V_lattice_pair(a="d", b="d", d0_A=2.75, phonon_meV=None, lam_TF_A=0.574):
+    """Lattice pair of two hydrogen isotopes in neighbouring sites. Each site has its own force constant
+    k_i = m_i w_i^2 (w_i: that isotope's optical-phonon energy); the relative-coordinate stiffness keeps the
+    R^2 part of 1/2 k1 x1^2 + 1/2 k2 x2^2 (centre-of-mass cross term dropped)."""
+    ph = {"p": 69.0, "d": 37.0, "t": 37.0*np.sqrt(MD_ME/MASS_ME["t"])}
+    if phonon_meV: ph.update(phonon_meV)
+    m1, m2 = MASS_ME[a], MASS_ME[b]; M = m1 + m2
+    k1 = m1*(ph[a]*1e-3/HARTREE_EV)**2; k2 = m2*(ph[b]*1e-3/HARTREE_EV)**2
+    krel = (k1*m2**2 + k2*m1**2)/M**2
+    d0 = d0_A/BOHR_A; lam = lam_TF_A/BOHR_A
+    return lambda R: np.exp(-R/lam)/R + 0.5*krel*(R - d0)**2
+
 def extra_screening(dU_eV, ell_A, shape="exponential"):
     """Additional screening near the pair: dV(R) = -dU g(R/ell), g(0)=1."""
     dU = dU_eV/HARTREE_EV; ell = ell_A/BOHR_A; g = PROFILES[shape]
@@ -85,15 +102,16 @@ def _numerov(f, w0, w1):
             cur += 230.25850929940458; off[i] = cur; off[i+1] = cur
     return w, off
 
-def solve(Vfun, Rmax, r0=1e-5, h=5e-5, tol=1e-13, Rmin_well=None):
+def solve(Vfun, Rmax, r0=1e-5, h=5e-5, tol=1e-13, Rmin_well=None, mu=None, S_keVb=None):
     """Ground s-state of the d-d relative motion in Vfun(R).
     Returns dict: E (hartree), psi0sq (bohr^-3), rate (s^-1), r, u (normalized), V."""
+    MU = MU_DD if mu is None else mu
     s = np.arange(np.log(r0), np.log(Rmax), h); r = np.exp(s); V = Vfun(r)
-    a = 1/(2*MU_DD)                              # half the nuclear Bohr radius scale in u ~ r(1 + r/2a)
+    a = 1/(2*MU)                              # half the nuclear Bohr radius scale in u ~ r(1 + r/2a)
     u01 = r[:2]*(1 + r[:2]/(2*a)); w0, w1 = u01*np.exp(-s[:2]/2)
 
     def shoot(E):
-        f = 1 - h*h*(r**2*2*MU_DD*(V - E) + 0.25)/12
+        f = 1 - h*h*(r**2*2*MU*(V - E) + 0.25)/12
         return _numerov(f, w0, w1)
     def nodes(E):
         w, _ = shoot(E)
@@ -129,10 +147,10 @@ def solve(Vfun, Rmax, r0=1e-5, h=5e-5, tol=1e-13, Rmin_well=None):
     norm = np.trapezoid(u**2, rr)
     lpsi0 = (logu[0] - ref) - np.log(rr[0]) - np.log(1 + rr[0]/(2*a)) - 0.5*np.log(4*np.pi*norm)
     psi0sq = np.exp(2*lpsi0)
-    return dict(E=E, psi0sq=psi0sq, log10_rate=np.log10(A_cm3s()) + 2*lpsi0/np.log(10) - 3*np.log10(BOHR_CM),
+    return dict(E=E, psi0sq=psi0sq, log10_rate=np.log10(A_cm3s(S_keVb if S_keVb is not None else S_KEVB, MU)) + 2*lpsi0/np.log(10) - 3*np.log10(BOHR_CM),
                 r=rr, u=u/np.sqrt(norm), V=V[:j])
 
 S_KEVB = 53.701 + 55.576      # Bosch-Hale S(0) for both D+D branches, keV*barn
-def A_cm3s(S_keVb=S_KEVB):
-    alpha = 1/137.035999; c = 2.99792458e10; mu_c2_keV = MU_DD*510.99895
+def A_cm3s(S_keVb=S_KEVB, mu=MU_DD):
+    alpha = 1/137.035999; c = 2.99792458e10; mu_c2_keV = mu*510.99895
     return S_keVb*1e-24*c/(np.pi*alpha*mu_c2_keV)
