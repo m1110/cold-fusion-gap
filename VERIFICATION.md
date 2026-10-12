@@ -52,6 +52,24 @@ Same analysis as notebook 04 (lattice pair, beam-matched at 0.004 Å, effective 
 
 **Conclusion (B) of notebook 04 survives:** at 800 eV, watts become reachable for two profile shapes, but **in both, the null limit is crossed at a shorter range first.** The range bound widens to 0.012–0.30 Å.
 
+## Re-run: closer equilibrium D–D separations (Sun & Tománek)
+
+Literature (via reviews; primary not yet read) reports that deuterons in heavily loaded Pd can sit in equilibrium as close as **0.94 Å** (average ~1.4 Å), closer than the 1.5–2.75 Å used in notebooks 03–08. Same analysis (exponential profile, beam-matched):
+
+| D–D spacing | Bare rate | U_meas = 300 eV: null crossed / watts | 575 eV | 800 eV |
+|---|---|---|---|---|
+| 1.4 Å | 10⁻¹¹²·¹ | 0.122 Å / never | 0.108 / 0.137 Å | 0.096 / 0.122 Å |
+| 0.94 Å | 10⁻¹⁰⁹·⁵ | 0.108 Å / never | 0.085 / 0.108 Å | 0.076 / 0.108 Å |
+
+**"Watts imply neutrons" holds at both spacings;** the range bound tightens to ~0.08–0.12 Å. To add to notebook 04 and the paper.
+
+## Prior work to engage (added after novelty search)
+
+- **Leggett & Baym (1989):** in equilibrium, the d–d tunneling rate is bounded above by the Born–Oppenheimer value (secondary sources quote ~10⁻⁴⁷ s⁻¹ per pair). They also argued that strongly reduced short-range repulsion would imply enhanced binding of alpha particles to the metal, which is not observed (cf. our thermochemistry remark, notebook 08). **Their bound is theoretical and equilibrium-based; ours is empirical (measured U_e + null limit) and model-based. The paper must present them as complementary and explain why the measured beam anomaly does not contradict theirs** (beam measurements are not equilibrium at rest).
+- **Parmenter & Lamb, PNAS (1989):** conduction-electron screening could give ~10⁻³⁰ s⁻¹ per pair, 7 orders below the Jones claim.
+- **Sun & Tománek (1989):** equilibrium D–D separations down to 0.94 Å in Pd (row above).
+- **Karahadian et al. (2026) Pd/PdD/Ti/TiD screening dataset**; a 2026 two-band screening model (Zenodo) and a 2025 lithium-screening study: newer data the paper should cite and, ideally, fit.
+
 ## Prior work: what is already known, and what may be new
 
 | Prior work | What it established | Relation to this repo |
