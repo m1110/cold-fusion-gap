@@ -38,15 +38,21 @@ where $S(0)$ is the zero-energy astrophysical S-factor and $\psi$ the s-wave gro
 
 1 W cm$^{-3}$ in PdD requires $\sim6\times10^{-11}$ fusions per pair per second. A d–d pair at the lattice spacing (2.75 Å) gives $10^{-124}$ s$^{-1}$, a gap of **~114 orders of magnitude**. The often-quoted ~53 orders is against a D$_2$ molecule (0.74 Å), which the lattice does not provide. Varying spacing (1.5–2.75 Å), phonon energy and Thomas–Fermi length moves the lattice rate by at most tens of orders.
 
+![Fusion rate per pair vs pair spacing for each hydrogen-isotope fuel. All fuels except p+p reach 1 W/cm³ at 7–8 pm.](../figures/06_closer_lighter.png){width=6in}
+
 ## 3.2 Closer and lighter
 
 Scaling the molecular potential by a heavier screening particle compresses the pair. Watt-level rates need $m^*\approx 9.2$ for d+d (Koonin & Nauenberg: 5–10), i.e. a **pair spacing of 8.0 pm**. Repeating this for all hydrogen-isotope pairs, p+d, p+t, d+d and d+t all reach watt level at **7.3–8.2 pm**; p+p never does (weak-interaction S-factor). Lighter pairs lead at long range (p+d is $10^{8}$ above d+d in a molecule, $10^{17}$ at lattice spacing), but larger S-factors win near the watt zone. An independent calculation for a lattice-type pair held at fixed spacing by an external force gives the same 7.3 pm, at an energy cost of ~170 eV per pair (Boltzmann factor $10^{-2900}$ at 300 K). Deuterium clusters in a Pd vacancy (N = 2–6) do not help: mutual repulsion places the nearest pair at 2.8–3.8 Å.
 
 ## 3.3 Anomalous screening at rest: a two-sided bound
 
-Fig. 1 shows the effective rate for a lattice pair along the beam-consistent curve. If the screening reaches only the few-hundredths of an ångström the beam data probe, the rate stays below $10^{-100}$ s$^{-1}$. As $\ell$ increases, the rate **jumps** when $\Delta V$ binds a new d–d state at 0.07–0.24 Å (deeper and closer for larger $U_{\rm meas}$). It is then limited by tunneling into that state and by fusion within it.
+The figure below shows the effective rate for a lattice pair along the beam-consistent curve. If the screening reaches only the few-hundredths of an ångström the beam data probe, the rate stays below $10^{-100}$ s$^{-1}$. As $\ell$ increases, the rate **jumps** when $\Delta V$ binds a new d–d state at 0.07–0.24 Å (deeper and closer for larger $U_{\rm meas}$). It is then limited by tunneling into that state and by fusion within it.
 
 The null neutron limit for Pd and Ti at rest, $<2\times10^{-26}$ s$^{-1}$ per pair [Aberdam et al. 1990], then bounds $\ell$. For an exponential profile, $\ell < 0.154$ Å (300 eV), $0.137$ Å (575 eV) and $0.129$ Å (800 eV). Across 40 variants (profile shape, harmonic vs barrier-capped lattice, spacing, Thomas–Fermi length, phonon energy, attempt frequency $\times10^{\pm3}$, weaker null limit) plus the 800 eV case, the bound spans **0.012–0.315 Å** (median 0.137 Å). It is dominated by profile shape and screening length; lattice stiffness and tunneling kinetics hardly matter. At 165 eV and for step profiles the static limit does not constrain $\ell$, but those cases never come within 20 orders of watt level.
+
+![Effective lattice-pair rate along the beam-consistent screening band (exponential profile) for three measured screening strengths. Dotted: fusion rate inside the new short-range bound state.](../figures/03_along_band.png){width=6in}
+
+![Maximum range of the beam-measured screening allowed at rest by the 1990 neutron limit, across model variants.](../figures/04_range_bound.png){width=6in}
 
 **Watts imply neutrons.** Several variants reach $\ge 1$ W cm$^{-3}$ at $U_{\rm meas}\ge 575$ eV. In every one, the rate crosses the neutron limit at a *shorter* range than it reaches watt level (e.g. Yukawa profile at 800 eV: 0.012 Å vs 0.016 Å). No variant jumps from below the limit to watt level.
 
@@ -59,8 +65,10 @@ p+d → $^3$He + γ (5.49 MeV) has no neutron branch. With the same beam-consist
 The d+d compound state $^4$He$^*$ (23.85 MeV) decays strongly with widths $\Gamma_{\rm strong}\sim0.5$–6 MeV (lifetimes $10^{-22}$–$10^{-21}$ s), and radiatively with $\Gamma_\gamma/\Gamma_p\approx 10^{-7}$ [Zhou et al. 2006]. Suppressing neutrons by $s_n$ needs a lattice width $\Gamma_{\rm lat}\gtrsim\Gamma_{\rm strong}/s_n$, which is **already 20–260× the transition energy at $s_n=10^{-3}$** and $10^{10}$–$10^{11}$× at $10^{-12}$. A state that wide is not a state, so any heat-only process cannot go through $^4$He$^*$. For mechanisms that do:
 
 - **electromagnetic** (internal conversion, pair creation) falls short by ~11–20 orders;
-- **direct multi-phonon** emission (Englman–Jortner energy-gap law, $6.4\times10^8$ phonons) gives rates $\sim10^{-4\times10^9}$ s$^{-1}$ for any plausible coupling;
+- **direct multi-phonon** emission (Englman–Jortner energy-gap law, $6.4\times10^8$ phonons) gives rates ~10^(−4×10⁹) s$^{-1}$ for any plausible coupling;
 - **coherent many-nucleus** coupling needs $\sim10^{15}$–$10^{33}$ phase-locked nuclei (vs $\sim10^3$ in coherent domains).
+
+![Lattice-channel width needed for the heat-only channel vs the required neutron suppression, compared with the 23.85 MeV transition energy.](../figures/07_required_width.png){width=6in}
 
 It is also **causally excluded**: in the compound-nucleus lifetime, light travels $<0.003$ Å, far less than the distance to the nearest neighbouring deuteron.
 

@@ -1,7 +1,8 @@
 # Preprint draft
 
-- `draft.md`: the paper (Markdown with LaTeX math; renders on GitHub).
-- `main.tex`: generated from `draft.md` with pandoc (`pandoc draft.md -s -o main.tex`). Not compiled here (no LaTeX installed); compile with `pdflatex main.tex`.
+- **`cold_fusion_gap_preprint.docx`: the distribution copy (Word).**
+- `draft.md`: editable source (Markdown with LaTeX math).
+- `build.sh`: rebuilds the .docx (math converted to portable text via `tex2unicode.py`) and `main.tex` (LaTeX, for arXiv; compile with `pdflatex main.tex`).
 
 ## Before submission (in order)
 
