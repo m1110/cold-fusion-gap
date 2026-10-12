@@ -88,8 +88,8 @@ We compute deuterium--deuterium (and other hydrogen-isotope) fusion
 rates for nuclei at rest with a log-grid Numerov solver for the
 relative-motion ground state, \(\Gamma = A|\psi(0)|^2\). The solver
 reproduces the D\(_2\), HD and H\(_2\) binding energies to \(\le 0.001\)
-eV and the Koonin--Nauenberg molecular rates (d+d: \(2.5\times10^{-64}\)
-vs \(3\times10^{-64}\) s\(^{-1}\); p+d: \(10^{-55.2}\) vs
+eV and the Koonin--Nauenberg molecular rates (d+d: \(2.0\times10^{-64}\)
+vs \(3\times10^{-64}\) s\(^{-1}\); p+d: \(10^{-55.3}\) vs
 \(\sim10^{-55}\) s\(^{-1}\)). For deuterons at the PdD lattice spacing
 the rate is \(\sim10^{-124}\) s\(^{-1}\), about 114 orders of magnitude
 below the \(\sim6\times10^{-11}\) s\(^{-1}\) per pair needed for 1 W
@@ -159,14 +159,16 @@ energy comes from node-counting bisection, and amplitudes are tracked in
 log space (\(\psi(0)\) is \(\sim10^{-37}\) of its peak).
 
 \textbf{Potentials.} \emph{Molecular:} the H\(_2\) Born--Oppenheimer
-curve {[}Kolos \& Wolniewicz 1965{]}, splined to the He united-atom
-limit; heavier screening particles (mass \(m^*\)) via the exact scaling
-\(V_{m^*}(R)=m^*V_1(m^*R)\). \emph{Lattice:} Thomas--Fermi-screened
-repulsion (0.57 Å for Pd) plus a harmonic restoring force on the
-separation set by the PdD optical phonon (37 meV). \emph{Anomalous
-screening:} \(\Delta V(R) = -\Delta U\,g(R/\ell)\) with \(g\)
-exponential, Gaussian, step or Yukawa-type. \(\Delta U\) is fixed by
-requiring \(\Delta V = -U_{\rm meas}\) at the beam turning point
+curve tabulated by Pachucki {[}2010{]} for \(R\) = 0.1--20 bohr
+(consistent with Kolos \& Wolniewicz 1965), splined to the He
+united-atom limit below 0.1 bohr; heavier screening particles (mass
+\(m^*\)) via the exact scaling \(V_{m^*}(R)=m^*V_1(m^*R)\).
+\emph{Lattice:} Thomas--Fermi-screened repulsion (0.57 Å for Pd) plus a
+harmonic restoring force on the separation set by the PdD optical phonon
+(37 meV). \emph{Anomalous screening:}
+\(\Delta V(R) = -\Delta U\,g(R/\ell)\) with \(g\) exponential, Gaussian,
+step or Yukawa-type. \(\Delta U\) is fixed by requiring
+\(\Delta V = -U_{\rm meas}\) at the beam turning point
 (\(\approx 0.004\) Å). When \(\Delta V\) creates a bound state at short
 range, we take the effective rate as the smaller of the bound-state
 fusion rate and the WKB tunneling rate into it.
@@ -174,10 +176,12 @@ fusion rate and the WKB tunneling rate into it.
 \textbf{Validation} (Table 1). The solver reproduces D\(_2\), HD and
 H\(_2\) binding energies to \(\le 0.001\) eV, the D\(_2\) zero-point
 energy to \(<1\%\), and the Koonin--Nauenberg rates for d+d and p+d.~It
-is converged to 0.002 decades in step size and starting radius. The main
-systematic is the short-range potential: a 0.05 Ha error below 0.3 Å
-shifts the rate by 0.7 decades. We adopt \(\pm1\) decade as the working
-uncertainty.
+is converged to 0.002 decades in step size and starting radius. The rate
+is sensitive to the short-range potential (a 0.05 Ha error below 0.3 Å
+would shift it by 0.7 decades), but the tabulated curve is accurate to
+\(\ll10^{-6}\) Ha. The residual spread among published molecular rates
+(factor \textasciitilde3) reflects nuclear-contact modelling, and we
+adopt a factor of a few as the working uncertainty.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
@@ -195,11 +199,11 @@ Reference
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-D\(_2\) binding \(D_0\) & 4.5556 eV & 4.5562 eV \\
-HD / H\(_2\) binding & 4.5129 / 4.4771 eV & 4.5139 / 4.4781 eV \\
-d+d rate in D\(_2\) & \(2.5\times10^{-64}\) s\(^{-1}\) &
+D\(_2\) binding \(D_0\) & 4.5559 eV & 4.5562 eV \\
+HD / H\(_2\) binding & 4.5133 / 4.4774 eV & 4.5139 / 4.4781 eV \\
+d+d rate in D\(_2\) & \(2.0\times10^{-64}\) s\(^{-1}\) &
 \(3\times10^{-64}\) {[}KN89{]}; \(5.7\times10^{-64}\) {[}2025{]} \\
-p+d rate in HD & \(10^{-55.2}\) s\(^{-1}\) & \(\sim10^{-55}\)
+p+d rate in HD & \(10^{-55.3}\) s\(^{-1}\) & \(\sim10^{-55}\)
 {[}KN89{]} \\
 Thermal reactivity (Gamow integral) & within 1--2\% & Bosch--Hale fit,
 0.2--50 keV \\
@@ -393,10 +397,10 @@ screening energies to cold-fusion energies and compared with positive
 claims. Their full text should be compared in detail before any novelty
 claim is made.
 
-\textbf{Limitations.} (i) The short-range H\(_2\) potential uses
-recalled Kolos--Wolniewicz values. They are supported by the
-binding-energy and Koonin--Nauenberg checks but were not re-read from
-the original table. (ii) Several literature inputs were verified only at
+\textbf{Limitations.} (i) The molecular potential is the
+Born--Oppenheimer curve; non-adiabatic and nuclear-structure corrections
+are not included (the published molecular rates differ by a factor
+\textasciitilde3). (ii) Several literature inputs were verified only at
 abstract level (see VERIFICATION.md). (iii) The lattice model is a
 single radial pair; anisotropy, many-body exchange and defects beyond a
 spherical vacancy are not modelled. (iv) The screening profiles are
@@ -469,6 +473,8 @@ sources)}\label{references-to-be-completed-and-checked-against-primary-sources}}
   Karahadian M. et al., Nat. Commun. 17, 8845 (2026).
 \item
   Kolos W. \& Wolniewicz L., J. Chem. Phys. 43, 2429 (1965).
+\item
+  Pachucki K., Phys. Rev.~A 82, 032509 (2010), arXiv:1007.0322.
 \item
   Koonin S. E. \& Nauenberg M., Nature 339, 690 (1989).
 \item
