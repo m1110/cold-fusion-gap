@@ -12,6 +12,7 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 | `notebooks/07_heat_only_channel.ipynb` | Upper bound on fusion energy going directly to lattice heat: required width vs neutron suppression, electromagnetic channels, multi-phonon energy-gap law, coherent many-nucleus coupling, causality |
 | `notebooks/08_vacancy_clusters.ipynb` | Deuterium clusters (N = 2–6) in a Pd vacancy; pair held at fixed spacing and the energy cost |
 | `notebooks/09_muon_catalysis_economics.ipynb` | Muon-catalyzed fusion energy balance, calibrated to measured data; levers to net electricity |
+| `notebooks/10_muon_hybrid_blanket.ipynb` | μCF as a neutron source for a subcritical fission blanket, compared with spallation; tritium self-sufficiency |
 | `notebooks/02_screening_anomaly.ipynb` | The electron-screening anomaly in deuterated metals: data, how U_e is extracted, a simulated depth-profile artifact, Debye vs Thomas–Fermi consistency checks, a heavy-electron bridge to cold-fusion rates, the 2025–26 results, proposed decisive experiments |
 
 ## Headline findings
@@ -36,11 +37,14 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 - **Notebook 08:** vacancy clusters push deuterons apart (2.8–3.8 Å). Holding a pair at the 7.3 pm watt spacing costs ~170 eV.
 - **Notebook 09:** muon-catalyzed fusion is ~1.5× from scientific breakeven and ~9× from net electricity, the one gap of engineering size.
 
-## Verification, experiments, paper
+- **Notebook 10:** a subcritical blanket gives μCF net electricity with today's numbers, but today μCF yields ~30 neutrons per GeV, the same as spallation. It only beats existing accelerator-driven systems once muons cost ≲4–8 GeV or catalyse ≳100–175 fusions each.
+
+## Verification, experiments, papers
 
 - [`VERIFICATION.md`](VERIFICATION.md): status of every input (confirmed / secondary / unverified), a Pd U_e = 800 eV re-run, and the prior-work comparison (Leggett & Baym 1989; Czerski et al. 2006).
 - [`EXPERIMENTS.md`](EXPERIMENTS.md): designs E1–E3.
-- [`paper/`](paper/): preprint draft (`draft.md`, `main.tex`) and the pre-submission checklist.
+- [`paper/`](paper/): preprint, **`cold_fusion_gap_preprint.docx`** (distribution copy), source, LaTeX and pre-submission checklist.
+- [`notes/muon_hybrid/`](notes/muon_hybrid/): technical note **`muon_hybrid_note.docx`** on closing the muon-catalysed fusion gap.
 
 ## Tools
 

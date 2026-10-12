@@ -7,7 +7,7 @@ SUP = str.maketrans("0123456789+-=()n.", "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼�
 SUB = str.maketrans("0123456789+-=()aehklmnoprstux", "₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₕₖₗₘₙₒₚᵣₛₜᵤₓ")
 SYMS = {r"\times": "×", r"\approx": " ≈ ", r"\simeq": "≃", r"\sim": "∼", r"\le": "≤", r"\ge": "≥", r"\lesssim": " ≲ ",
         r"\gtrsim": " ≳ ", r"\pm": "±", r"\to": "→", r"\Gamma": "Γ", r"\Delta": "Δ", r"\psi": "ψ", r"\pi": "π",
-        r"\alpha": "α", r"\mu": "μ", r"\ell": "ℓ", r"\gamma": "γ", r"\varphi": "φ", r"\omega": "ω", r"\lambda": "λ",
+        r"\alpha": "α", r"\mu": "μ", r"\nu": "ν", r"\ell": "ℓ", r"\gamma": "γ", r"\varphi": "φ", r"\omega": "ω", r"\lambda": "λ",
         r"\,": " ", r"\;": " ", r"\quad": "   ", r"\qquad": "    ", r"\cdot": "·", r"\infty": "∞", r"\%": "%"}
 
 def script(body, table):
