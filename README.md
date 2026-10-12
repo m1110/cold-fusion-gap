@@ -29,6 +29,13 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 
 - **Notebook 06:** ~114 orders short with no new physics; ~15 at the most the neutron data allow; ~2.5 for the best (gamma-loud) p+d case. Every fuel except p+p reaches watts at a pair spacing of **~7–8 pm**, so closer is the lever and lighter only a modifier. Three experiments are designed in [`EXPERIMENTS.md`](EXPERIMENTS.md).
 
+## Tools
+
+- `tools/claim_check.py`: check a claimed result against these bounds. Example:
+  `python tools/claim_check.py --power 1 --metal Pd --mass 1 --loading 0.9 --fuel dd --neutrons 1`
+  reports the implied rate per pair, its distance from standard physics, the pair spacing it requires (and the energy to hold it), the expected neutron/tritium/gamma output, and conflicts with the 1990 null limit and notebook 07.
+- `tests/`: `python -m pytest tests` (solver reproduces Koonin–Nauenberg; checker flags a 1 W d+d claim).
+
 ## Caveats
 
 The literature check used web-search indexes. Google Scholar, PhilPapers, Crossref, arXiv and publisher sites couldn't be reached from the build environment. Each notebook ends with a source-status table that marks claims as confirmed, corrected, secondary or unverified.
