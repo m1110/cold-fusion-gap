@@ -5,3 +5,4 @@
 - Notebooks: build from a script, execute with `jupyter nbconvert --execute --inplace`, and write conclusions only after reading the computed output. Numbers in prose must match the printed results.
 - `notebooks/cfsolve.py` is the shared, validated solver. Keep `python -m pytest tests` passing.
 - Inputs that are recalled, secondary or unverified are marked as such (see VERIFICATION.md).
+- Fetch literature only with `tools/fetch.py` (official APIs, rate-limited, cached). Never automate Google Scholar or PhilPapers.

@@ -19,11 +19,10 @@ MD_ME      = 3670.48296788            # deuteron / electron mass
 MU_DD      = MD_ME/2                  # d-d reduced mass (m_e)
 E_UA       = -2.903724                # He ground state: united-atom limit of H2
 
-# H2 Born-Oppenheimer total energies (hartree) vs R (bohr), as recalled from
-# Kolos & Wolniewicz (1965). R=1.4 matches the modern value -1.1744759 (Pachucki 2010).
-KW_R = np.array([0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.4, 3.0, 4.0, 5.0, 6.0])
-KW_E = np.array([-0.1202, -0.7696, -1.0200, -1.1245, -1.1649, -1.17447, -1.16858,
-                 -1.15507, -1.13813, -1.10044, -1.05732, -1.01637, -1.00381, -1.00083])
+# H2 Born-Oppenheimer total energies (hartree) vs R (bohr): Pachucki, Phys. Rev. A 82, 032509 (2010),
+# arXiv:1007.0322, Table IV (verified from the primary source; agrees with Kolos & Wolniewicz 1965 to 1e-4 Ha).
+KW_R = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.25, 1.3, 1.32, 1.34, 1.36, 1.38, 1.39, 1.4, 1.41, 1.42, 1.44, 1.46, 1.48, 1.5, 1.55, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+KW_E = np.array([7.127216731132, 2.197803295226, 0.619241659796, -0.120230341179, -0.526638758743, -0.769635429486, -0.922027461527, -1.020056666361, -1.083643239959, -1.124539719547, -1.150057367739, -1.164935243440, -1.169419627391, -1.172347149038, -1.173138736333, -1.173734874958, -1.174148498570, -1.174391683632, -1.174452917278, -1.174475714220, -1.174461370871, -1.174411141239, -1.174207836585, -1.173875042749, -1.173421418292, -1.172855079579, -1.170994919897, -1.168583373371, -1.162458726898, -1.155068737612, -1.146850697030, -1.138132957133, -1.129163836101, -1.120132116849, -1.111181765204, -1.102422606011, -1.093938129956, -1.085791237396, -1.078028484184, -1.070683233481, -1.063778008806, -1.057326268873, -1.051333772268, -1.045799661432, -1.040717365351, -1.036075395191, -1.031858084855, -1.028046308380, -1.024618188411, -1.021549795534, -1.018815827696, -1.016390252951, -1.012359959683, -1.009256516262, -1.006895223823, -1.005116006100, -1.003785658584, -1.002796816311, -1.002065057210, -1.001525251887, -1.001127880852, -1.000835707655, -1.000400548535, -1.000197914480, -1.000102106148, -1.000055604973, -1.000032171833, -1.000019781832, -1.000012856877, -1.000008755746, -1.000006189995, -1.000004505989, -1.000003356175, -1.000002545970, -1.000001529287, -1.000000960681, -1.000000625454, -1.000000419586, -1.000000288826, -1.000000203341, -1.000000146028, -1.000000106740])
 
 def make_Eel(shift_short=0.0, c2_ua=None):
     """Electronic energy E_el(R) = E_BO(R) - 1/R, splined to the united-atom limit at R=0.
@@ -31,15 +30,15 @@ def make_Eel(shift_short=0.0, c2_ua=None):
     Eel = KW_E - 1/KW_R + np.where(KW_R <= 0.6, shift_short, 0.0)
     if c2_ua is None:
         c2_ua = (Eel[0] - E_UA)/KW_R[0]**2
-    Rpre = np.array([0.0, 0.1, 0.2, 0.3]); Rtail = np.array([8.0, 10.0, 15.0])
-    Rs = np.concatenate([Rpre, KW_R, Rtail])
-    Es = np.concatenate([E_UA + c2_ua*Rpre**2, Eel, -1 - 1/Rtail - 6.5/Rtail**6])
+    Rpre = np.array([0.0, 0.05])
+    Rs = np.concatenate([Rpre, KW_R])
+    Es = np.concatenate([E_UA + c2_ua*Rpre**2, Eel])
     return CubicSpline(Rs, Es, bc_type=((1, 0.0), 'not-a-knot'))
 
 def V_molecule(mstar=1.0, Eel=None):
     """D2-like molecule with electron mass m*: V_m(R) = m* V_1(m* R)."""
     Eel = Eel if Eel is not None else make_Eel()
-    return lambda R: mstar*(1/(mstar*R) + Eel(np.minimum(mstar*R, 15.0)))
+    return lambda R: mstar*(1/(mstar*R) + Eel(np.minimum(mstar*R, 20.0)))
 
 def V_lattice(d0_A=2.75, phonon_meV=37.0, lam_TF_A=0.574, confinement="harmonic", barrier_eV=0.23):
     """Two deuterons in neighbouring lattice sites: Thomas-Fermi screened Coulomb repulsion plus a

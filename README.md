@@ -51,6 +51,7 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 - `tools/claim_check.py`: check a claimed result against these bounds. Example:
   `python tools/claim_check.py --power 1 --metal Pd --mass 1 --loading 0.9 --fuel dd --neutrons 1`
   reports the implied rate per pair, its distance from standard physics, the pair spacing it requires (and the energy to hold it), the expected neutron/tritium/gamma output, and conflicts with the 1990 null limit and notebook 07.
+- `tools/fetch.py`: polite literature fetching for source checks (official endpoints only, robots.txt, per-host spacing shared across processes, on-disk cache, request cap, logged). Set `CFG_CONTACT_EMAIL` to identify requests. Example: `python tools/fetch.py arxiv-pdf 1007.0322 --text`.
 - `tests/`: `python -m pytest tests` (solver reproduces Koonin–Nauenberg; checker flags a 1 W d+d claim).
 
 ## Caveats

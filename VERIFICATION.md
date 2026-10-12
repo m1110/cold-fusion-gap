@@ -1,6 +1,6 @@
 # Source verification and prior-work check
 
-**Method and limit:** Google Scholar, PhilPapers, arXiv, OSTI, INSPIRE, PubMed and publisher sites were **unreachable** from the build environment (network policy). Every check below went through a web-search index (abstracts, metadata, snippets). Status levels:
+**Method and limit:** arXiv and PubMed became reachable on 2026-10-12 and are read through `tools/fetch.py` (rate-limited, cached, logged). Google Scholar and PhilPapers are not used (their terms forbid automated access). OSTI, INSPIRE, Crossref and OpenAlex APIs remained blocked by network policy. Rows marked *primary* were checked against the full text. Every check below went through a web-search index (abstracts, metadata, snippets). Status levels:
 
 - **Confirmed (abstract):** the value appears in an indexed abstract or official record.
 - **Confirmed (secondary):** quoted by a later review or paper, not seen in the original.
@@ -14,16 +14,16 @@ To upgrade any row, read the primary paper (DOIs given) or allow those domains i
 | Input | Value used | Status | Source / note |
 |---|---|---|---|
 | Koonin–Nauenberg D₂ fusion rate | 3×10⁻⁶⁴ s⁻¹ | Confirmed (abstract) | *Nature* 339, 690 (1989); preprint abstract |
-| Koonin–Nauenberg p+d rate | ~10⁻⁵⁵ s⁻¹ | Confirmed (abstract) | same; our solver gives 10⁻⁵⁵·² |
+| Koonin–Nauenberg p+d rate | ~10⁻⁵⁵ s⁻¹ | Confirmed (abstract) | same; our solver gives 10⁻⁵⁵·³ |
 | Koonin–Nauenberg heavy electron | ×5–10 for claimed rates | Confirmed (abstract) | same |
-| 2025 recalculation | 5.7×10⁻⁶⁴ s⁻¹ | Confirmed (secondary) | arXiv:2501.08338 |
-| H₂ Born–Oppenheimer curve, R = 0.4–1.0 bohr | Kolos–Wolniewicz 1965 values, **recalled** | **Internal check only** | Table not readable in indexed copies of *J. Chem. Phys.* 43, 2429. Supported by: D₂/HD/H₂ binding to ≤0.001 eV, zero-point energy to <1%, K–N d+d rate to 0.08 decades, p+d to 0.2 decades. Sensitivity: 0.05 Ha → 0.7 decades. **Highest-priority primary check.** |
+| 2025 recalculation | 5.7×10⁻⁶⁴ s⁻¹ | **Confirmed (primary, full text)** | arXiv:2501.08338, eq. (305); also quotes K–N 3×10⁻⁶⁴ (eqs. 102, 299) |
+| H₂ Born–Oppenheimer curve | **Pachucki 2010 Table IV, R = 0.1–20 bohr (82 points)** | **Confirmed (primary, full text)** | arXiv:1007.0322. The earlier recalled Kolos–Wolniewicz points (R = 0.4–1.4) match it to ≤10⁻⁴ Ha. Adopting the full table moved the D₂ rate from 10⁻⁶³·⁶⁰ to 10⁻⁶³·⁷⁰ and p+d from 10⁻⁵⁵·²⁰ to 10⁻⁵⁵·²⁸; binding energies now D₂ 4.5559 (expt 4.5562), HD 4.5133 (4.5139), H₂ 4.4774 (4.4781) eV |
 | H₂ minimum | −1.1744759 Ha | Confirmed (abstract) | Pachucki 2010; Sims & Hagstrom 2006 |
 | Neutron null limit, Pd & Ti at rest | < 2×10⁻²⁶ s⁻¹ per pair | **Confirmed (official record)** | Aberdam et al., *PRL* 65, 1196 (1990), 18 authors; OSTI record gives the exponent (the APS page renders it incorrectly) |
 | Weaker limit | < 3.6×10⁻²³ s⁻¹ | Confirmed (abstract) | Badurek et al. 1989 |
 | Jones et al. claim | ~10⁻²³ s⁻¹ (Ti) | Confirmed (secondary) | *Nature* 338 (1989), via reviews |
 | Screening, Ta | 309±12 / **340±14 / 340±24** eV | Confirmed (abstract); values differ across reports | Raiola et al. 2002; later reviews quote 340 |
-| Screening, **Pd** | **250±15 or 800±90 eV** | **Conflict between sources** | 250: review arXiv:0804.3886; 800: arXiv:cond-mat/0612306 and a NASA review. Range 165–575 eV used in notebooks 03–05, **so 800 eV was re-run (below)** |
+| Screening, **Pd** | **250±15 or 800±90 eV** | **Both confirmed in primary full text; they are different measurements** | 250±15 eV: arXiv:0804.3886 (deuterated Pd, citing Kasagi et al.); 800±90 eV: arXiv:cond-mat/0612306 (PdD). Range 165–575 eV used in notebooks 03–05; 800 eV re-run below |
 | Screening, noble metals | Cu 43, Ag 23, Au 61 eV | Confirmed (secondary) | NASA GRC review (Pines et al. 2020) |
 | D₂ gas screening | 25±5 eV | Confirmed (secondary) | LUNA overview, arXiv:0906.1097 |
 | Adiabatic limit | ~27–28 eV | Confirmed (secondary) | several reviews |
