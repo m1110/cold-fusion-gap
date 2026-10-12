@@ -9,6 +9,9 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 | `notebooks/04_robustness.ipynb` | Robustness of notebook 03 over 40 variants: screening shape (exponential, Gaussian, step, Yukawa), capped vs harmonic lattice, spacing, Thomas–Fermi length, phonon energy, attempt frequency, weaker null limit |
 | `notebooks/05_fuels_density_resonance.ipynb` | Other levers: all hydrogen-isotope fuel pairs (molecule and lattice; second solver validation on p+d and H₂/HD binding), p+d with screening in mixed H/D lattices, pycnonuclear density scan, resonant tunneling via exact transfer matrix, proposed experiments |
 | `notebooks/06_status_and_experiments.ipynb` | Distance to goal under each assumption; closer/lighter compression scan for all fuels; three experiment designs with computed sensitivities (summary in [`EXPERIMENTS.md`](EXPERIMENTS.md)) |
+| `notebooks/07_heat_only_channel.ipynb` | Upper bound on fusion energy going directly to lattice heat: required width vs neutron suppression, electromagnetic channels, multi-phonon energy-gap law, coherent many-nucleus coupling, causality |
+| `notebooks/08_vacancy_clusters.ipynb` | Deuterium clusters (N = 2–6) in a Pd vacancy; pair held at fixed spacing and the energy cost |
+| `notebooks/09_muon_catalysis_economics.ipynb` | Muon-catalyzed fusion energy balance, calibrated to measured data; levers to net electricity |
 | `notebooks/02_screening_anomaly.ipynb` | The electron-screening anomaly in deuterated metals: data, how U_e is extracted, a simulated depth-profile artifact, Debye vs Thomas–Fermi consistency checks, a heavy-electron bridge to cold-fusion rates, the 2025–26 results, proposed decisive experiments |
 
 ## Headline findings
@@ -28,6 +31,16 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 - **Notebook 05:** p+d is the fastest pair (+8 orders over d+d in a molecule, matching Koonin–Nauenberg; +17 in the lattice) and emits no neutrons. But even with the screening anomaly it peaks at ~10⁻¹²·³ s⁻¹, short of watts, and it emits 5.5 MeV gammas. d+t is *slower* than d+d at rest. Cold metallic deuterium reaches 1 W/cm³ only at ~1.6×10⁴ g/cm³ (~10⁵× PdD). Resonant tunneling adds nothing beyond the sequential kinetics already used. **Every lever that moves orders of magnitude does so by shrinking or lightening the pair.**
 
 - **Notebook 06:** ~114 orders short with no new physics; ~15 at the most the neutron data allow; ~2.5 for the best (gamma-loud) p+d case. Every fuel except p+p reaches watts at a pair spacing of **~7–8 pm**, so closer is the lever and lighter only a modifier. Three experiments are designed in [`EXPERIMENTS.md`](EXPERIMENTS.md).
+
+- **Notebook 07:** the heat-only channel is closed for any process through excited ⁴He. Even 10⁻³ neutron suppression needs a decay width larger than the 23.85 MeV transition energy. EM, multi-phonon and coherent routes fall short by ~11, ~10⁹ and ≥12 orders, and coherent transfer is causality-limited.
+- **Notebook 08:** vacancy clusters push deuterons apart (2.8–3.8 Å). Holding a pair at the 7.3 pm watt spacing costs ~170 eV.
+- **Notebook 09:** muon-catalyzed fusion is ~1.5× from scientific breakeven and ~9× from net electricity, the one gap of engineering size.
+
+## Verification, experiments, paper
+
+- [`VERIFICATION.md`](VERIFICATION.md): status of every input (confirmed / secondary / unverified), a Pd U_e = 800 eV re-run, and the prior-work comparison (Leggett & Baym 1989; Czerski et al. 2006).
+- [`EXPERIMENTS.md`](EXPERIMENTS.md): designs E1–E3.
+- [`paper/`](paper/): preprint draft (`draft.md`, `main.tex`) and the pre-submission checklist.
 
 ## Tools
 
