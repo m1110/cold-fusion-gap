@@ -9,6 +9,9 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 | `notebooks/04_robustness.ipynb` | Robustness of notebook 03 over 40 variants: screening shape (exponential, Gaussian, step, Yukawa), capped vs harmonic lattice, spacing, Thomas–Fermi length, phonon energy, attempt frequency, weaker null limit |
 | `notebooks/04b_kev_screening_and_spacing.ipynb` | Claims A and B re-tested with keV screening (Karahadian et al. 2026: PdD 1.7 keV, TiD 0.9 keV) and closer D–D spacings (0.94, 1.4 Å): 72 variants |
 | `notebooks/11_other_paths.ipynb` | Energetic deuterons in metals (lattice confinement fusion, beam-loaded PdD): energy return; survey of catalysis, ignition, aneutronic fuels, low-waste fission |
+| `notebooks/05b_pd_window_kev.ipynb` | Neutron-free p+d in mixed H/D lattices at keV screening (0.9–2.0 keV): is there a window where p+d gives watts and d+d stays below the neutron limit? |
+| `notebooks/12_waste_burning_budget.ipynb` | Fission-waste burning: TRU burn rate per GWth-year, fleet size and time to clear the stock, ADS driver share (spallation vs μCF), neutrons for ⁹⁹Tc/¹²⁹I |
+| `notebooks/13_depth_artifact_and_shape_fit.ipynb` | Can a near-surface deuterium excess fake keV screening in Karahadian et al.'s thick-target fit? Screening shape fitted to the data and its effect on Claim A |
 | `notebooks/05_fuels_density_resonance.ipynb` | Other levers: all hydrogen-isotope fuel pairs (molecule and lattice; second solver validation on p+d and H₂/HD binding), p+d with screening in mixed H/D lattices, pycnonuclear density scan, resonant tunneling via exact transfer matrix, proposed experiments |
 | `notebooks/06_status_and_experiments.ipynb` | Distance to goal under each assumption; closer/lighter compression scan for all fuels; three experiment designs with computed sensitivities (summary in [`EXPERIMENTS.md`](EXPERIMENTS.md)) |
 | `notebooks/07_heat_only_channel.ipynb` | Upper bound on fusion energy going directly to lattice heat: required width vs neutron suppression, electromagnetic channels, multi-phonon energy-gap law, coherent many-nucleus coupling, causality |
@@ -43,6 +46,10 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 
 - **Notebook 04b:** with keV screening and closer spacings (72 variants), 33 reach watts and all cross the neutron limit first (smallest margin 1.29× in range). The overall range bound is 0.003–0.31 Å; for keV screening with a long-tailed profile it collapses to the beam turning point.
 - **Notebook 11:** energetic deuterons in metals return at most ~3×10⁻⁵ of their energy (4.5 orders below breakeven), with or without 1.7 keV screening. Hot fusion (NIF gain ~4) and muon catalysis are the paths with gaps of ~10× or less. Fission can't be made free of fission products; transmutation shortens the hazard to ~300 years.
+
+- **Notebook 05b:** no p+d window in any of 24 variants up to 2 keV screening. Keeping coexisting d+d below the neutron limit leaves p+d at least 2.8 orders short of watts.
+- **Notebook 12:** fissioning 0.394 t of transuranics gives 1 GWth-year. ~235 GWth of burners just keeps pace with today's LWR fleet, and a spallation driver costs ~17% of output at k = 0.95. μCF only helps once its levers are reached (3–6%).
+- **Notebook 13:** under Karahadian et al.'s fitting procedure, no near-surface deuterium excess fakes more than 0.28–0.44 keV, so PdD still needs ≥1.15 keV of genuine enhancement. Fitting the screening shape to the data leaves Claim A unchanged.
 
 ## Verification, experiments, papers
 

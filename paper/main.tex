@@ -106,14 +106,18 @@ Requiring consistency with the null neutron limit for Pd and Ti at rest
 \textbf{≈0.003--0.3 Å} across 112 model variants (profile shape, lattice
 model, D--D spacing 0.94--2.75 Å, \(U_e\) = 0.17--2.0 keV). For
 keV-scale screening with a long-tailed profile the allowed range
-collapses to the beam turning point itself. \textbf{(B)} In every
-variant, rates approaching 1 W cm\(^{-3}\) occur only at ranges already
-excluded by the neutron limit: \emph{for screening-plus-confinement
-mechanisms, watts imply neutrons.} We relate these results to the
-Leggett--Baym equilibrium bound and propose three experiments that test
-the remaining assumptions: a 5.5 MeV gamma search for neutron-free p+d
-fusion at rest, beam screening in a heavy-fermion compound with a
-temperature switch, and same-target p+d vs d+d screening.
+collapses to the beam turning point itself. The bound is unchanged when
+the screening strength is instead fitted through the published
+thick-target procedure. A near-surface deuterium excess can fake at most
+0.28--0.44 keV, so the reported 1.7 keV is not a depth-profile artifact.
+\textbf{(B)} In every variant, rates approaching 1 W cm\(^{-3}\) occur
+only at ranges already excluded by the neutron limit: \emph{for
+screening-plus-confinement mechanisms, watts imply neutrons.} We relate
+these results to the Leggett--Baym equilibrium bound and propose three
+experiments that test the remaining assumptions: a 5.5 MeV gamma search
+for neutron-free p+d fusion at rest, beam screening in a heavy-fermion
+compound with a temperature switch, and same-target p+d vs d+d
+screening.
 \end{abstract}
 
 \hypertarget{introduction}{%
@@ -350,18 +354,59 @@ limit by \textasciitilde15 orders of magnitude.
 channel}\label{the-neutron-free-channel}}
 
 p+d → ³He + γ (5.49 MeV) has no neutron branch, so the 1990 limit does
-not constrain it directly. With the same beam-consistent screening (up
-to 575 eV), the p+d lattice rate peaks at \(10^{-12.3}\) s\(^{-1}\),
-\textasciitilde2.5 orders short of watt level even in a 50/50 H/D mix,
-and coexisting d+d pairs violate the neutron limit first. 1 W of p+d
-would also emit \textasciitilde{}\(10^{12}\) gammas per second.
-Disposing of fusion energy without any radiation would require the
-reaction energy to go directly into the lattice. For any process through
-the excited ⁴He compound nucleus, suppressing neutrons even by
-\(10^{-3}\) requires a lattice decay width exceeding the 23.85 MeV
-transition energy, and coherent transfer is causality-limited (light
-travels \textless0.003 Å in the compound lifetime). We do not consider
-such channels further.
+not constrain it directly. We scanned mixed H/D loading with the same
+beam-matched screening (notebook 05b: \(U_{\mathrm{meas}}\) = 0.9, 1.7
+and 2.0 keV, four profile shapes, spacings 2.75 and 0.94 Å). In 14 of
+the 24 variants, p+d alone would reach watt level in a 50/50 mix. But
+the d+d rate always matches or exceeds it (by up to 3.7 orders in peak
+rate), and keeping \(x_D^2\Gamma_{dd}\) below the neutron limit forces
+the deuterium fraction down to \(x_D \approx 10^{-15}\)--\(10^{-7}\).
+\textbf{No variant has a window:} at the neutron-allowed \(x_D\), p+d
+falls at least 2.8 orders short of watts, and 3.3--19 orders in the
+other variants. Escaping this would require a lattice that suppresses
+d--d pairing ≳4×10⁵-fold below random H/D mixing. 1 W of p+d would also
+emit \textasciitilde{}\(10^{12}\) gammas per second. Disposing of fusion
+energy without any radiation would require the reaction energy to go
+directly into the lattice. For any process through the excited ⁴He
+compound nucleus, suppressing neutrons even by \(10^{-3}\) requires a
+lattice decay width exceeding the 23.85 MeV transition energy, and
+coherent transfer is causality-limited (light travels \textless0.003 Å
+in the compound lifetime). We do not consider such channels further.
+
+\hypertarget{is-kev-screening-a-depth-profile-artifact-and-does-the-screening-shape-matter}{%
+\subsection{3.6 Is keV screening a depth-profile artifact, and does the
+screening shape
+matter?}\label{is-kev-screening-a-depth-profile-artifact-and-does-the-screening-shape-matter}}
+
+The beam values could be inflated if the target holds more deuterium
+near the surface: low-energy beams react closer to the surface. We
+reproduced the analysis of Karahadian et al.~{[}2026{]}: thick-target
+yields, normalised at \(E_{cm}\) = 6.5 keV, with a constant \(U_e\)
+fitted over 2.5--6.5 keV and stopping \(S\propto E^{p}\), \(p\) =
+0.3--0.7. We applied it to targets with \textbf{no} screening and an
+arbitrary near-surface excess (notebook 13). Yield is linear in the
+deuterium density, and the low-energy beam always loses relatively more
+energy per unit depth. The largest apparent \(U_e\) any non-negative
+profile can produce is therefore the thin-target limit,
+\textbf{0.28--0.44 keV}. A tenfold excess in a layer 1--5\% of the beam
+range fakes only 0.09--0.19 keV. Even under that extreme artifact, the
+reported values need genuine enhancement of at least 1.15--1.47 keV
+(PdD), 0.41--0.61 keV (TiD) and 0.32--0.51 keV (Pd). Depth profiles can
+explain a few hundred eV, but not the keV values. The sub-keV plateau,
+which no constant \(U_e\) describes, is outside this analysis.
+
+We also replaced beam matching at 0.004 Å by a fit to the data: the
+strength \(\Delta U\) was solved so that the WKB enhancement of each
+profile, put through the same thick-target fit, returns the reported
+\(U_e\). The fitted strength agrees with the beam-matched one within 4\%
+for \(\ell \ge 0.01\) Å and within 2--19\% at 0.004 Å. The neutron-limit
+crossings at 2.75 Å are unchanged to grid resolution: at 1.7 keV they
+are 0.0045 Å (Yukawa), 0.118 Å (exponential) and 0.266 Å (Gaussian). The
+published fit constrains the shape only weakly, because a ±0.2 keV
+change in \(U_e\) moves the relative yields by 33--50\%. Only ranges at
+the turning-point scale (≲0.003--0.0045 Å, depending on shape) are
+excluded. Claim A therefore does not depend on how the screening
+strength is matched to the beam data.
 
 \hypertarget{relation-to-prior-work}{%
 \section{4. Relation to prior work}\label{relation-to-prior-work}}
@@ -388,11 +433,12 @@ screening and confront it with null data. \textbf{Parmenter \& Lamb
 {[}1989{]}} estimated \textasciitilde{}\(10^{-30}\) s\(^{-1}\) from
 conduction-electron screening. \textbf{Huke et al.~{[}2008{]}} and the
 Lipoglavšek group identified target and depth-profile effects in \(U_e\)
-extraction, which motivate experiment E3. The sub-keV plateau of
-\textbf{Karahadian et al.~{[}2026{]}} (\textgreater{}\(10^{18}\) above
-bare-nucleus expectations at 0.25 keV beam energy) is not described by a
-constant \(U_e\), as the authors note; our bounds use their fitted
-values above 2.5 keV.
+extraction, which motivate experiment E3. Our §3.6 shows that such
+effects are bounded at ≲0.44 keV under the published fitting procedure.
+The sub-keV plateau of \textbf{Karahadian et al.~{[}2026{]}}
+(\textgreater{}\(10^{18}\) above bare-nucleus expectations at 0.25 keV
+beam energy) is not described by a constant \(U_e\), as the authors
+note; our bounds use their fitted values above 2.5 keV.
 
 \hypertarget{proposed-experiments}{%
 \section{5. Proposed experiments}\label{proposed-experiments}}
@@ -435,8 +481,12 @@ statistics, about 1.5 days per point at 1 mA.
   null measurement {[}Aberdam et al.~1990{]}; the weaker limit of
   Badurek et al.~(3.6×10⁻²³) loosens it only slightly. (iv) Several
   literature inputs were verified at abstract level; the repository's
-  VERIFICATION.md lists the status of each. (v) The p+d analysis was
-  carried to 575 eV only.
+  VERIFICATION.md lists the status of each. (v) The p+d analysis assumes
+  random H/D occupancy; a lattice with strongly preferential p--d
+  pairing is not excluded. (vi) The depth-artifact analysis (§3.6) uses
+  a constant S-factor and power-law stopping, and the shape constraint
+  uses a proxy for the published uncertainties, because the individual
+  data points are not tabulated.
 \end{enumerate}
 
 \hypertarget{conclusions}{%
@@ -455,14 +505,23 @@ statistics, about 1.5 days per point at 1 mA.
   the region already excluded by the neutron searches: \textbf{watts
   imply neutrons.}
 \item
+  Neutron-free p+d fusion offers no escape: up to 2 keV screening,
+  keeping coexisting d+d pairs below the neutron limit leaves p+d at
+  least 2.8 orders short of watts.
+\item
+  Depth-profile artifacts cannot produce keV screening under the
+  published fitting procedure (≤0.44 keV), and fitting the screening
+  shape to the data leaves the bound unchanged.
+\item
   The anomaly is therefore either confined to short range (and
   irrelevant at rest), or it is something other than static screening,
   which experiments E1--E3 are designed to tell apart.
 \end{enumerate}
 
-\textbf{Data and code availability.} Notebooks (03, 04, 04b reproduce
-every number here), the solver \texttt{cfsolve.py}, a claim-checking
-tool and figures: https://github.com/m1110/cold-fusion-gap
+\textbf{Data and code availability.} Notebooks (03, 04, 04b, 05b and 13
+reproduce every number here), the solver \texttt{cfsolve.py}, a
+claim-checking tool and figures:
+https://github.com/m1110/cold-fusion-gap
 
 \textbf{Acknowledgements.} Analysis code and drafting were assisted by
 an AI model (Claude, Anthropic); all results are reproducible from the

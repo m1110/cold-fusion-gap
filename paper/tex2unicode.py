@@ -5,7 +5,7 @@ import re, sys
 
 SUP = str.maketrans("0123456789+-=()n.", "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ·")
 SUB = str.maketrans("0123456789+-=()aehklmnoprstux", "₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₕₖₗₘₙₒₚᵣₛₜᵤₓ")
-SYMS = {r"\times": "×", r"\approx": " ≈ ", r"\simeq": "≃", r"\sim": "∼", r"\le": "≤", r"\ge": "≥", r"\lesssim": " ≲ ",
+SYMS = {r"\times": "×", r"\propto": "∝", r"\approx": " ≈ ", r"\simeq": "≃", r"\sim": "∼", r"\le": "≤", r"\ge": "≥", r"\lesssim": " ≲ ",
         r"\gtrsim": " ≳ ", r"\pm": "±", r"\to": "→", r"\Gamma": "Γ", r"\Delta": "Δ", r"\psi": "ψ", r"\pi": "π",
         r"\alpha": "α", r"\mu": "μ", r"\nu": "ν", r"\sigma": "σ", r"\int": "∫", r"\langle": "⟨", r"\rangle": "⟩", r"\rho": "ρ", r"\tau": "τ", r"\theta": "θ", r"\eta": "η", r"\epsilon": "ε", r"\beta": "β", r"\partial": "∂", r"\left": "", r"\right": "", r"\ell": "ℓ", r"\gamma": "γ", r"\varphi": "φ", r"\omega": "ω", r"\lambda": "λ",
         r"\,": " ", r"\;": " ", r"\quad": "   ", r"\qquad": "    ", r"\cdot": "·", r"\infty": "∞", r"\%": "%"}
