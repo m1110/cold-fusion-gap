@@ -49,13 +49,24 @@ Muons work (~150 fusions per muon) but are ~9× from net electricity; the route 
 
 **Fission cannot be made free of harmful products:** it always makes fission products. The best route shortens the hazard to centuries. Among nuclear options, only aneutronic fusion approaches "no harmful deposits", and it is the least developed.
 
+## 4.1 Waste-burning budget (notebook 12)
+
+Energy bookkeeping fixes the burn rate: fissioning **0.394 t of transuranics (TRU) releases 1 GWth-year** (200 MeV per fission). Inventory figures below are secondary and unverified.
+
+* An assumed world stock of ~4,800 t TRU (~4×10⁵ t of spent fuel at ~1.2% TRU) is ~12,200 GWth-years of heat.
+* ~370 GWe of light-water reactors add ~92 t TRU per year. Holding the stock level takes ~235 GWth of burners; 300 GWth clears it in ~190 years and 1,000 GWth in ~16 years.
+* In a subcritical (accelerator-driven) burner, the neutron driver takes **17% of the electrical output at k = 0.95 with spallation**, falling to 7–10% at k = 0.97–0.98. Muon-catalysed fusion today (30 n/GeV) is no better (16%). With the muon-catalysis levers of the companion muon note, the share falls to 3–6%.
+* Transmuting the ⁹⁹Tc and ¹²⁹I made per fission takes ~0.07 neutrons. A subcritical burner at k ≤ 0.97 supplies 1.3–4.7 times that as source neutrons (an upper bound, since not all reach targets); at k = 0.98 it does not.
+
+Clearing the waste is limited by fleet size and neutrons, not by physics. A better neutron source cuts the driver penalty roughly six-fold but does not change the fleet size that energy bookkeeping sets.
+
 # 5. Conclusions
 
 1. No room-temperature path closes the gap within known physics. Energetic deuterons in metals fall 3–4.5 orders short of breakeven, independent of screening.
 2. The paths with gaps of ~10× or less are **hot fusion** (laser and magnetic) and **muon catalysis**.
 3. For low waste: partitioning and transmutation (fission, ~300-year hazard) is the nearest-term option; p–¹¹B is the cleanest but the furthest.
 
-**Reproducibility.** Notebook 11 at https://github.com/m1110/cold-fusion-gap. Status levels of the literature inputs: hot-fusion and waste figures are from secondary sources and press releases (2025–2026) unless noted, to be checked against primary publications before citation.
+**Reproducibility.** Notebooks 11 and 12 at https://github.com/m1110/cold-fusion-gap. Status levels of the literature inputs: hot-fusion and waste figures are from secondary sources and press releases (2025–2026) unless noted, to be checked against primary publications before citation.
 
 **Acknowledgements.** Analysis and drafting assisted by an AI model (Claude, Anthropic).
 
