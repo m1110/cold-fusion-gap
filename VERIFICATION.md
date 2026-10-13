@@ -24,6 +24,8 @@ To upgrade any row, read the primary paper (DOIs given) or allow those domains i
 | Jones et al. claim | ~10⁻²³ s⁻¹ (Ti) | Confirmed (secondary) | *Nature* 338 (1989), via reviews |
 | Screening, Ta | 309±12 / **340±14 / 340±24** eV | Confirmed (abstract); values differ across reports | Raiola et al. 2002; later reviews quote 340 |
 | Screening, **Pd** | **250±15 or 800±90 eV** | **Both confirmed in primary full text; they are different measurements** | 250±15 eV: arXiv:0804.3886 (deuterated Pd, citing Kasagi et al.); 800±90 eV: arXiv:cond-mat/0612306 (PdD). Range 165–575 eV used in notebooks 03–05; 800 eV re-run below |
+| Screening, **Pd/Ti keV values** | Pd 0.8±0.2, **PdD 1.7±0.2**, Ti 0.3±0.2, TiD 0.9±0.2 keV | **Confirmed (primary, full text)** | Karahadian et al., Nat. Commun. 17, 8845 (2026), arXiv:2512.06212. Authors note U_e may lump several mechanisms. Analysed in notebook 04b |
+| Sun & Tománek separations | 0.94 Å minimum, ~1.4 Å average | Reference confirmed (PRL 63, 59, 1989); values secondary | Analysed in notebook 04b |
 | Screening, noble metals | Cu 43, Ag 23, Au 61 eV | Confirmed (secondary) | NASA GRC review (Pines et al. 2020) |
 | D₂ gas screening | 25±5 eV | Confirmed (secondary) | LUNA overview, arXiv:0906.1097 |
 | Adiabatic limit | ~27–28 eV | Confirmed (secondary) | several reviews |

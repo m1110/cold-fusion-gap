@@ -7,6 +7,8 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 | `notebooks/01_rate_gap.ipynb` | Rate gap (~10^52–53), required effective temperature (65 eV, from a numerical Gamow integral validated against Bosch–Hale to 1–2%), coherence scaling limits, exit-channel constraint, muon catalysis balance, literature check |
 | `notebooks/03_bridge_and_bounds.ipynb` | Quantum solver for the d–d pair's ground state (`cfsolve.py`), validated against D₂ binding/zero-point energy and Koonin–Nauenberg; exact heavy-electron scan; lattice-pair model; extra-screening map bounded by beam data and 1990 neutron limits |
 | `notebooks/04_robustness.ipynb` | Robustness of notebook 03 over 40 variants: screening shape (exponential, Gaussian, step, Yukawa), capped vs harmonic lattice, spacing, Thomas–Fermi length, phonon energy, attempt frequency, weaker null limit |
+| `notebooks/04b_kev_screening_and_spacing.ipynb` | Claims A and B re-tested with keV screening (Karahadian et al. 2026: PdD 1.7 keV, TiD 0.9 keV) and closer D–D spacings (0.94, 1.4 Å): 72 variants |
+| `notebooks/11_other_paths.ipynb` | Energetic deuterons in metals (lattice confinement fusion, beam-loaded PdD): energy return; survey of catalysis, ignition, aneutronic fuels, low-waste fission |
 | `notebooks/05_fuels_density_resonance.ipynb` | Other levers: all hydrogen-isotope fuel pairs (molecule and lattice; second solver validation on p+d and H₂/HD binding), p+d with screening in mixed H/D lattices, pycnonuclear density scan, resonant tunneling via exact transfer matrix, proposed experiments |
 | `notebooks/06_status_and_experiments.ipynb` | Distance to goal under each assumption; closer/lighter compression scan for all fuels; three experiment designs with computed sensitivities (summary in [`EXPERIMENTS.md`](EXPERIMENTS.md)) |
 | `notebooks/07_heat_only_channel.ipynb` | Upper bound on fusion energy going directly to lattice heat: required width vs neutron suppression, electromagnetic channels, multi-phonon energy-gap law, coherent many-nucleus coupling, causality |
@@ -39,12 +41,16 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 
 - **Notebook 10:** a subcritical blanket gives μCF net electricity with today's numbers, but today μCF yields ~30 neutrons per GeV, the same as spallation. It only beats existing accelerator-driven systems once muons cost ≲4–8 GeV or catalyse ≳100–175 fusions each.
 
+- **Notebook 04b:** with keV screening and closer spacings (72 variants), 33 reach watts and all cross the neutron limit first (smallest margin 1.29× in range). The overall range bound is 0.003–0.31 Å; for keV screening with a long-tailed profile it collapses to the beam turning point.
+- **Notebook 11:** energetic deuterons in metals return at most ~3×10⁻⁵ of their energy (4.5 orders below breakeven), with or without 1.7 keV screening. Hot fusion (NIF gain ~4) and muon catalysis are the paths with gaps of ~10× or less. Fission can't be made free of fission products; transmutation shortens the hazard to ~300 years.
+
 ## Verification, experiments, papers
 
 - [`VERIFICATION.md`](VERIFICATION.md): status of every input (confirmed / secondary / unverified), a Pd U_e = 800 eV re-run, and the prior-work comparison (Leggett & Baym 1989; Czerski et al. 2006).
 - [`EXPERIMENTS.md`](EXPERIMENTS.md): designs E1–E3.
 - [`paper/`](paper/): preprint, **`cold_fusion_gap_preprint.docx`** (distribution copy), source, LaTeX and pre-submission checklist.
 - [`notes/muon_hybrid/`](notes/muon_hybrid/): technical note **`muon_hybrid_note.docx`** on closing the muon-catalysed fusion gap.
+- [`notes/other_paths/`](notes/other_paths/): technical note **`other_paths_note.docx`**: energetic deuterons in metals, ignition status, low-waste options.
 
 ## Tools
 

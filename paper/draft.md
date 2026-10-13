@@ -3,7 +3,7 @@ title: "How far can anomalous electron screening reach at rest? Constraints from
 author: "[Author names and affiliations to be added]"
 date: "Draft, October 2026"
 abstract: |
-  Low-energy d(d,p)t measurements on deuterated metals imply electron screening energies $U_e$ of 0.2–0.8 keV, rising to 1.7 keV in electrochemically loaded PdD (Karahadian et al. 2026), far above the ~25 eV of gas targets and atomic theory. These are beam measurements: they probe d–d separations below ~0.004 Å at keV energies. Whether the anomaly also acts on deuterons *at rest* in the lattice is open, and is what a room-temperature fusion effect would require. We answer it quantitatively. A log-grid Numerov solver for the d–d relative-motion ground state, using the Pachucki Born–Oppenheimer potential, reproduces the D$_2$, HD and H$_2$ binding energies to ≤0.001 eV and the published molecular fusion rates. We represent the anomalous screening as an extra potential $-\Delta U\,g(R/\ell)$ of unknown range $\ell$, with four profile shapes, its strength fixed by matching the measured $U_e$ at the beam turning point, and compute the fusion rate of lattice deuteron pairs as a function of $\ell$. The rate stays below $10^{-100}$ s$^{-1}$ while the screening is short-ranged, then jumps when the extra attraction binds a new d–d state at 0.07–0.24 Å. **(A)** Requiring consistency with the null neutron limit for Pd and Ti at rest ($<2\times10^{-26}$ s$^{-1}$ per pair, 1990) bounds the range to **{{RANGE}}** across {{NVAR}} model variants (profile shape, lattice model, D–D spacing 0.94–2.75 Å, $U_e$ = 0.3–2.0 keV). For keV-scale screening with a long-tailed profile the allowed range collapses to the beam turning point itself. **(B)** In every variant, rates approaching 1 W cm$^{-3}$ occur only at ranges already excluded by the neutron limit: *for screening-plus-confinement mechanisms, watts imply neutrons.* We relate these results to the Leggett–Baym equilibrium bound and propose three experiments that test the remaining assumptions: a 5.5 MeV gamma search for neutron-free p+d fusion at rest, beam screening in a heavy-fermion compound with a temperature switch, and same-target p+d vs d+d screening.
+  Low-energy d(d,p)t measurements on deuterated metals imply electron screening energies $U_e$ of 0.2–0.8 keV, rising to 1.7 keV in electrochemically loaded PdD (Karahadian et al. 2026), far above the ~25 eV of gas targets and atomic theory. These are beam measurements: they probe d–d separations below ~0.004 Å at keV energies. Whether the anomaly also acts on deuterons *at rest* in the lattice is open, and is what a room-temperature fusion effect would require. We answer it quantitatively. A log-grid Numerov solver for the d–d relative-motion ground state, using the Pachucki Born–Oppenheimer potential, reproduces the D$_2$, HD and H$_2$ binding energies to ≤0.001 eV and the published molecular fusion rates. We represent the anomalous screening as an extra potential $-\Delta U\,g(R/\ell)$ of unknown range $\ell$, with four profile shapes, its strength fixed by matching the measured $U_e$ at the beam turning point, and compute the fusion rate of lattice deuteron pairs as a function of $\ell$. The rate stays below $10^{-100}$ s$^{-1}$ while the screening is short-ranged, then jumps when the extra attraction binds a new d–d state at 0.07–0.24 Å. **(A)** Requiring consistency with the null neutron limit for Pd and Ti at rest ($<2\times10^{-26}$ s$^{-1}$ per pair, 1990) bounds the range to **≈0.003–0.3 Å** across 112 model variants (profile shape, lattice model, D–D spacing 0.94–2.75 Å, $U_e$ = 0.17–2.0 keV). For keV-scale screening with a long-tailed profile the allowed range collapses to the beam turning point itself. **(B)** In every variant, rates approaching 1 W cm$^{-3}$ occur only at ranges already excluded by the neutron limit: *for screening-plus-confinement mechanisms, watts imply neutrons.* We relate these results to the Leggett–Baym equilibrium bound and propose three experiments that test the remaining assumptions: a 5.5 MeV gamma search for neutron-free p+d fusion at rest, beam screening in a heavy-fermion compound with a temperature switch, and same-target p+d vs d+d screening.
 ---
 
 # 1. Introduction
@@ -58,15 +58,26 @@ While the extra screening is confined to the region the beams probe, the lattice
 
 The null neutron limit for Pd and Ti at rest [Aberdam et al. 1990] bounds $\ell$:
 
-{{TABLE_A}}
+| $U_{\mathrm{meas}}$ | Exponential, 2.75 Å | Exponential, 0.94 Å | Gaussian, 2.75 Å | Yukawa (any spacing) |
+|---|---|---|---|---|
+| 300 eV | 0.159 | 0.113 | 0.311 | 0.041 |
+| 575 eV | 0.134 | 0.081 | 0.311 | 0.019 |
+| 800 eV | 0.123 | 0.074 | 0.286 | 0.013 |
+| 900 eV (TiD) | 0.123 | 0.074 | 0.286 | 0.011 |
+| 1.7 keV (PdD) | 0.113 | 0.063 | 0.263 | 0.0043 |
+| 2.0 keV | 0.104 | 0.063 | 0.263 | 0.0030 |
+
+*Maximum range ℓ (Å) of the anomalous screening allowed at rest by the 1990 null limit (notebook 04b). Step profiles reach the limit only at the closer spacings (0.19–0.26 Å at 0.94–1.4 Å).*
 
 ![Effective rate along the beam-consistent curve for four profile shapes (2.75 Å).](../figures/04_shapes.png){width=6in}
 
-Across {{NVAR}} variants the allowed range is **{{RANGE}}**. It is set mainly by the profile shape and the Thomas–Fermi length; lattice stiffness, phonon energy and tunneling attempt frequency (×10$^{\pm3}$) change it by ≲20%, and closer equilibrium spacings tighten it. **For keV-scale screening with a long-tailed (Yukawa) profile, the bound reaches the beam turning point itself (~0.003–0.004 Å):** keV screening cannot extend appreciably beyond the distances the beam probes. (That Yukawa case also implies a long-range tail equivalent to ~0.75 e of screening charge per pair.) Step profiles and the weakest screening (165 eV) never reach the limit and remain unconstrained, but those cases also never come within 20 orders of watt level.
+Across 112 variants the allowed range is **≈0.003–0.3 Å**. It is set mainly by the profile shape and the Thomas–Fermi length; lattice stiffness, phonon energy and tunneling attempt frequency (×10$^{\pm3}$) change it by ≲20%, and closer equilibrium spacings tighten it. **For keV-scale screening with a long-tailed (Yukawa) profile, the bound reaches the beam turning point itself (~0.003–0.004 Å):** keV screening cannot extend appreciably beyond the distances the beam probes. Step profiles and the weakest screening (165 eV) never reach the limit and remain unconstrained, but those cases also never come within 20 orders of watt level.
 
 ## 3.4 Claim B: watts imply neutrons
 
-{{CLAIM_B}}
+Of the 72 variants in notebook 04b (and the 40 in notebook 04), 33 reach 1 W cm$^{-3}$ somewhere on the beam-consistent curve, all with $U_{\mathrm{meas}} \ge 575$ eV. **In every one, the neutron limit is crossed at a shorter range than watt level, and no variant jumps from below the limit straight to watt level.** The smallest margin, a factor of 1.29 in range, occurs for the Yukawa profile at 1.7 keV. The physical reason is that a rate climbing from $10^{-26}$ to $10^{-10}$ s$^{-1}$ must pass through the excluded band. Only a discontinuous jump, which the bound-state kinetics never produce, could skip it. Any screening-plus-confinement mechanism that delivered watts at rest would therefore have produced neutron rates exceeding the 1990 limit by ~15 orders of magnitude.
+
+![Maximum range allowed at rest across the notebook 04 variants (300 and 575 eV).](../figures/04_range_bound.png){width=6in}
 
 ## 3.5 The neutron-free channel
 
@@ -92,7 +103,7 @@ p+d → ³He + γ (5.49 MeV) has no neutron branch, so the 1990 limit does not c
 
 # 7. Conclusions
 
-1. Matching the measured beam screening (0.3–2.0 keV) and extending it to deuterons at rest, the null neutron searches bound its range to **{{RANGE}}**; for keV screening with a long-tailed profile, to the beam turning point itself.
+1. Matching the measured beam screening (0.3–2.0 keV) and extending it to deuterons at rest, the null neutron searches bound its range to **≈0.003–0.3 Å**; for keV screening with a long-tailed profile, to the beam turning point itself.
 2. In every model variant, rates approaching 1 W cm$^{-3}$ lie inside the region already excluded by the neutron searches: **watts imply neutrons.**
 3. The anomaly is therefore either confined to short range (and irrelevant at rest), or it is something other than static screening, which experiments E1–E3 are designed to tell apart.
 
