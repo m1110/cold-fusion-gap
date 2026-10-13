@@ -4,3 +4,4 @@ __pycache__/
 *.nbc
 .ipynb_checkpoints/
 .cache/
+data/_fig2_work/
