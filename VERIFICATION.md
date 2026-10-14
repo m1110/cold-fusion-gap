@@ -24,7 +24,7 @@ To upgrade any row, read the primary paper (DOIs given) or allow those domains i
 | Jones et al. claim | ~10⁻²³ s⁻¹ (Ti) | Confirmed (secondary) | *Nature* 338 (1989), via reviews |
 | Screening, Ta | 309±12 / **340±14 / 340±24** eV | Confirmed (abstract); values differ across reports | Raiola et al. 2002; later reviews quote 340 |
 | Screening, **Pd** | **250±15 or 800±90 eV** | **Both confirmed in primary full text; they are different measurements** | 250±15 eV: arXiv:0804.3886 (deuterated Pd, citing Kasagi et al.); 800±90 eV: arXiv:cond-mat/0612306 (PdD). Range 165–575 eV used in notebooks 03–05; 800 eV re-run below |
-| Screening, **Pd/Ti keV values** | Pd 0.8±0.2, **PdD 1.7±0.2**, Ti 0.3±0.2, TiD 0.9±0.2 keV | **Confirmed (primary, full text)** | Karahadian et al., Nat. Commun. 17, 8845 (2026), arXiv:2512.06212. Authors note U_e may lump several mechanisms. Analysed in notebooks 04b, 05b, 13. Fit method (thick target, normalised at E_cm = 6.5 keV, constant-U_e fit 6.5→2.5 keV; Ti >2.0 keV) confirmed from full text and reproduced in notebook 13 |
+| Screening, **Pd/Ti keV values** | Pd 0.8±0.2, **PdD 1.7±0.2**, Ti 0.3±0.2, TiD 0.9±0.2 keV | **Confirmed (primary, full text)** | Karahadian et al., Nat. Commun. 17, 8845 (2026), arXiv:2512.06212. Authors note U_e may lump several mechanisms. Analysed in notebooks 04b, 05b, 13. Fit method (thick target, normalised at E_cm = 6.5 keV, constant-U_e fit 6.5→2.5 keV; Ti >2.0 keV) confirmed from full text and reproduced in notebook 13. Fig. 2 digitised (notebook 14): the plotted model curves match a thin-target ratio, and a thick-target refit gives 1.08/1.86/0.85/1.16 keV, so U_e is model-dependent beyond ±0.2 keV |
 | Sun & Tománek separations | 0.94 Å minimum, ~1.4 Å average | Reference confirmed (PRL 63, 59, 1989); values secondary | Analysed in notebook 04b |
 | Screening, noble metals | Cu 43, Ag 23, Au 61 eV | Confirmed (secondary) | NASA GRC review (Pines et al. 2020) |
 | D₂ gas screening | 25±5 eV | Confirmed (secondary) | LUNA overview, arXiv:0906.1097 |
@@ -70,7 +70,7 @@ Literature (via reviews; primary not yet read) reports that deuterons in heavily
 - **Leggett & Baym (1989):** in equilibrium, the d–d tunneling rate is bounded above by the Born–Oppenheimer value (secondary sources quote ~10⁻⁴⁷ s⁻¹ per pair). They also argued that strongly reduced short-range repulsion would imply enhanced binding of alpha particles to the metal, which is not observed (cf. our thermochemistry remark, notebook 08). **Their bound is theoretical and equilibrium-based; ours is empirical (measured U_e + null limit) and model-based. The paper must present them as complementary and explain why the measured beam anomaly does not contradict theirs** (beam measurements are not equilibrium at rest).
 - **Parmenter & Lamb, PNAS (1989):** conduction-electron screening could give ~10⁻³⁰ s⁻¹ per pair, 7 orders below the Jones claim.
 - **Sun & Tománek (1989):** equilibrium D–D separations down to 0.94 Å in Pd (row above).
-- **Karahadian et al. (2026) Pd/PdD/Ti/TiD screening dataset**: fitting procedure reproduced in notebook 13; the individual data points with errors are not tabulated and should be requested from the authors to sharpen the shape constraint; a 2026 two-band screening model (Zenodo) and a 2025 lithium-screening study: newer data the paper should cite and, ideally, fit.
+- **Karahadian et al. (2026) Pd/PdD/Ti/TiD screening dataset**: fitting procedure reproduced in notebook 13; points digitised from Fig. 2 (notebook 14; digitisation, not tabulated data). Request the tabulated points and their yield model from the authors; a 2026 two-band screening model (Zenodo) and a 2025 lithium-screening study: newer data the paper should cite and, ideally, fit.
 
 ## Prior work: what is already known, and what may be new
 
@@ -86,3 +86,5 @@ Literature (via reviews; primary not yet read) reports that deuterons in heavily
 2. "**Watts imply neutrons**" for any screening-plus-confinement mechanism, holding across all profile shapes, lattice models and U_e up to 800 eV.
 3. The **~7–8 pm universal spacing** target across hydrogen-isotope fuels, and the p+d analysis in mixed lattices.
 4. The **E1–E3 designs**, in particular a neutron-free p+d gamma search at rest, and heavy-fermion screening with a temperature switch.
+
+- **Muon production cost** (notebook 16): ~5 GeV per muon today and ~2 GeV (Kelly et al. 2021 design) are recalled from secondary sources; beam-heat recovery fraction 0.8 is assumed. arXiv search is disallowed by robots.txt and the metadata APIs are blocked in this environment, so these still need a primary check.

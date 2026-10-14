@@ -12,6 +12,9 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 | `notebooks/05b_pd_window_kev.ipynb` | Neutron-free p+d in mixed H/D lattices at keV screening (0.9–2.0 keV): is there a window where p+d gives watts and d+d stays below the neutron limit? |
 | `notebooks/12_waste_burning_budget.ipynb` | Fission-waste burning: TRU burn rate per GWth-year, fleet size and time to clear the stock, ADS driver share (spallation vs μCF), neutrons for ⁹⁹Tc/¹²⁹I |
 | `notebooks/13_depth_artifact_and_shape_fit.ipynb` | Can a near-surface deuterium excess fake keV screening in Karahadian et al.'s thick-target fit? Screening shape fitted to the data and its effect on Claim A |
+| `notebooks/14_digitised_beam_data_fits.ipynb` | Fits to the digitised Karahadian et al. Fig. 2 (`data/karahadian2026_fig2.csv`, `tools/digitize_karahadian_fig2.py`): yield-model dependence of U_e, depth artifact under the published model, screening-shape windows |
+| `notebooks/15_e1_pairing_loophole.ipynb` | Experiment E1 (5.49 MeV gamma search) against the preferential p–d pairing loophole at keV screening |
+| `notebooks/16_muon_cost_targets.ipynb` | Beam energy per muon needed for net electricity, a power plant and beating spallation; beam-heat recovery; production efficiency vs the pion rest-mass floor |
 | `notebooks/05_fuels_density_resonance.ipynb` | Other levers: all hydrogen-isotope fuel pairs (molecule and lattice; second solver validation on p+d and H₂/HD binding), p+d with screening in mixed H/D lattices, pycnonuclear density scan, resonant tunneling via exact transfer matrix, proposed experiments |
 | `notebooks/06_status_and_experiments.ipynb` | Distance to goal under each assumption; closer/lighter compression scan for all fuels; three experiment designs with computed sensitivities (summary in [`EXPERIMENTS.md`](EXPERIMENTS.md)) |
 | `notebooks/07_heat_only_channel.ipynb` | Upper bound on fusion energy going directly to lattice heat: required width vs neutron suppression, electromagnetic channels, multi-phonon energy-gap law, coherent many-nucleus coupling, causality |
@@ -50,6 +53,10 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 - **Notebook 05b:** no p+d window in any of 24 variants up to 2 keV screening. Keeping coexisting d+d below the neutron limit leaves p+d at least 2.8 orders short of watts.
 - **Notebook 12:** fissioning 0.394 t of transuranics gives 1 GWth-year. ~235 GWth of burners just keeps pace with today's LWR fleet, and a spallation driver costs ~17% of output at k = 0.95. μCF only helps once its levers are reached (3–6%).
 - **Notebook 13:** under Karahadian et al.'s fitting procedure, no near-surface deuterium excess fakes more than 0.28–0.44 keV, so PdD still needs ≥1.15 keV of genuine enhancement. Fitting the screening shape to the data leaves Claim A unchanged.
+
+- **Notebook 14:** the published model curves are thin-target ratios. A thick-target refit of the digitised points gives *higher* screening (PdD 1.86 keV, Pd 1.08 keV). Under the published model, no depth profile can fake any positive U_e.
+- **Notebook 15:** a null E1 result closes the p–d pairing loophole for all keV screening variants, and a 30-day surface run suffices.
+- **Notebook 16:** net electricity with today's cycle needs muons at ~0.6 GeV (9× cheaper). With the sticking and cycling levers, η 0.5/0.6 and beam-heat recovery, a ~2 GeV muon source reaches gain 1.37. As a neutron source, μCF already ties spallation.
 
 ## Verification, experiments, papers
 

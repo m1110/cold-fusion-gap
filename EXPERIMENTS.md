@@ -19,6 +19,7 @@ Designs and sensitivity calculations are in [`notebooks/06_status_and_experiment
 - **Setup:** 10 g Pd foil co-loaded with H and D (0.45/0.45), resistance-monitored, with steady and cycled loading. HPGe/LaBr₃ detector with shield and muon veto, run at the surface and underground. Efficiency calibrated with the p+d reaction on an accelerator.
 - **Controls:** H-only, D-only (with ³He neutron counters), unloaded Pd, empty cell.
 - **Sensitivity (30 days, assumed backgrounds):** about 1×10⁻²⁶ per p–d pair per s at the surface and **4×10⁻²⁸ underground**, ~50× below the 1990 d+d neutron limit. Excludes screening ranges ≳0.12–0.16 Å at rest for 300–575 eV screening.
+- **Update for keV screening (notebook 15):** at 0.9–2.0 keV screening, E1 excludes ranges 1.25–1.97× shorter than any at which even a fully p–d-paired lattice would reach watts (all 14 variants with such a region). A null result therefore closes the preferential-pairing loophole of notebook 05b. Underground adds little at keV screening, so a 30-day **surface** run suffices.
 - **Decision:** a 5.49 MeV line that scales as x_H·x_D and is absent in the controls means p+d fusion at rest, and its rate measures the screening range. No line extends the neutron-based bound to a neutron-free channel.
 
 ## E2: Beam screening in a deuterium-implanted heavy-fermion compound, with a temperature switch

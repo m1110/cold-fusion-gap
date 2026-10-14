@@ -3,7 +3,7 @@ title: "Closing the muon-catalysed fusion energy gap: direct levers and a subcri
 author: "[Author names to be added]"
 date: "Technical note, October 2026"
 abstract: |
-  Muon-catalysed d–t fusion (μCF) is the only established route to fusion at room temperature. With ~150 fusions per muon and ~5 GeV per muon, it reaches a scientific gain of ~0.53–0.67 and an electric gain of ~0.11, i.e. ~9× short of net electricity. We quantify two ways to close that gap. Directly: cheaper muons (/2.5), halved sticking, a 3× faster cycle and better conversion together reach an electric gain of ~1.1. Indirectly: using the 14.1 MeV fusion neutrons to drive a subcritical fission blanket gives electric gains of several units even with today's μCF numbers. But today μCF yields ~30 neutrons per GeV of beam, the same as proton spallation (20–35 n/GeV), which accelerator-driven systems already use. A μCF hybrid is therefore worth building only when muons cost ≲4–8 GeV or catalyse ≳100–175 fusions each. With all direct levers it would reach ~170 n/GeV, 5–8× spallation. Either way, muon production cost and alpha-sticking are the deciding quantities, and high-density measurements now under way (MuFusE, PSI) bear directly on the second.
+  Muon-catalysed d–t fusion (μCF) is the only established route to fusion at room temperature. With ~150 fusions per muon and ~5 GeV per muon, it reaches a scientific gain of ~0.53–0.67 and an electric gain of ~0.11, i.e. ~9× short of net electricity. We quantify two ways to close that gap. Directly: cheaper muons (/2.5), halved sticking, a 3× faster cycle and better conversion together reach an electric gain of ~1.1. Indirectly: using the 14.1 MeV fusion neutrons to drive a subcritical fission blanket gives electric gains of several units even with today's μCF numbers. But today μCF yields ~30 neutrons per GeV of beam, the same as proton spallation (20–35 n/GeV), which accelerator-driven systems already use. A μCF hybrid is therefore worth building only when muons cost ≲4–8 GeV or catalyse ≳100–175 fusions each. With all direct levers it would reach ~170 n/GeV, 5–8× spallation. Recovering the beam heat from the pion-production target adds a further ~0.13–0.24 to the electric gain (to 1.37 with a ~2 GeV muon source and all levers). Either way, muon production cost and alpha-sticking are the deciding quantities, and high-density measurements now under way (MuFusE, PSI) bear directly on the second.
 ---
 
 # 1. Starting point
@@ -39,6 +39,14 @@ Each fusion emits a 14.1 MeV neutron. In a blanket with $k_{\mathrm{eff}}<1$, a 
 ![Electric gain of a subcritical blanket driven by μCF or by spallation, vs k_eff.](../../figures/10_hybrid_gain.png){width=6in}
 
 **Absolute gains are optimistic** (the multiplication formula ignores (n,2n), parasitic capture and leakage), but the comparison between sources is robust because the same blanket multiplies every source's neutrons equally. At $k_{\mathrm{eff}}=0.95$ the fusion itself supplies only ~1.1% of the heat. Tritium is not a constraint: each source neutron produces ~12 spare neutrons beyond those absorbed in fission, while breeding needs ~1 per fusion.
+
+# 3.1 How cheap must muons get? (notebook 16)
+
+Turning the question around: the beam energy per stopped muon $E_\mu$ that each goal allows. With today's cycle ($X = 150$), net electricity needs $E_\mu \approx 0.54$–$0.62$ GeV, 8–9× cheaper than today. That implies 1.6 stopped muons per GeV of beam, 23% of the absolute ceiling set by the π⁻ rest mass. Cheaper muons alone are therefore not a realistic route. The cycle levers move the target further than the production chain can. With $X = 336$ and conversion efficiencies of 0.5/0.6, break-even rises to 2.3 GeV per muon, or 3.0 GeV if the beam heat is recovered.
+
+**Beam-heat recovery** is a lever the earlier estimates leave out. Most of the proton beam's energy ends as heat in the pion-production target. Recovering 80% of it through the thermal cycle raises the electric gain from 0.11 to 0.24 today, and from 1.13 to **1.37** for a ~2 GeV muon source with all the cycle levers. As a neutron source, μCF ties spallation at ~5.5 GeV per muon today. With the cycle levers it wins at any muon cost below ~12 GeV, so for waste burning the sticking and cycling measurements matter more than muon cost. A power plant (gain 4) still needs ~0.6 GeV per muon even with every lever.
+
+The 5 GeV (today) and ~2 GeV (design) muon costs are recalled from secondary sources, and the 0.8 heat-recovery fraction is assumed.
 
 # 4. Conclusions
 

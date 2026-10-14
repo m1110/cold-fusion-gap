@@ -110,14 +110,15 @@ collapses to the beam turning point itself. The bound is unchanged when
 the screening strength is instead fitted through the published
 thick-target procedure. A near-surface deuterium excess can fake at most
 0.28--0.44 keV, so the reported 1.7 keV is not a depth-profile artifact.
-\textbf{(B)} In every variant, rates approaching 1 W cm\(^{-3}\) occur
-only at ranges already excluded by the neutron limit: \emph{for
-screening-plus-confinement mechanisms, watts imply neutrons.} We relate
-these results to the Leggett--Baym equilibrium bound and propose three
-experiments that test the remaining assumptions: a 5.5 MeV gamma search
-for neutron-free p+d fusion at rest, beam screening in a heavy-fermion
-compound with a temperature switch, and same-target p+d vs d+d
-screening.
+Refitting the digitised data with a thick-target model gives an even
+larger value (1.86 keV). \textbf{(B)} In every variant, rates
+approaching 1 W cm\(^{-3}\) occur only at ranges already excluded by the
+neutron limit: \emph{for screening-plus-confinement mechanisms, watts
+imply neutrons.} We relate these results to the Leggett--Baym
+equilibrium bound and propose three experiments that test the remaining
+assumptions: a 5.5 MeV gamma search for neutron-free p+d fusion at rest,
+beam screening in a heavy-fermion compound with a temperature switch,
+and same-target p+d vs d+d screening.
 \end{abstract}
 
 \hypertarget{introduction}{%
@@ -408,6 +409,25 @@ the turning-point scale (≲0.003--0.0045 Å, depending on shape) are
 excluded. Claim A therefore does not depend on how the screening
 strength is matched to the beam data.
 
+\textbf{Fits to the digitised data.} The individual points are not
+tabulated, so we digitised Fig. 2 of Karahadian et al.~(47 markers with
+error bars; notebook 14). Two findings matter. First, the published
+model curves are thin-target cross-section ratios: the bare curve
+matches \(\sigma(E)/\sigma(6.5)\) to 0.04 decade, while thick-target
+integrals with \(S\propto E^{0.3\text{–}1}\) miss it by 0.11--0.27
+decade. Second, \(U_e\) depends on the yield model by more than its
+quoted ±0.2 keV. The same points give 0.63/1.39/0.41/0.76 keV
+(Pd/PdD/Ti/TiD) with a thin-target fit and \textbf{1.08/1.86/0.85/1.16
+keV} with a thick-target fit (\(S\propto E^{0.5}\)). Our range of
+0.17--2.0 keV covers both. Under the thin-target convention, a uniform
+unscreened thick target returns \(U_e \approx -0.3\) keV and the most
+extreme surface excess returns exactly zero, so no depth profile can
+fake positive screening at all. Every profile shape fits the PdD points
+down to ranges at the turning-point scale (0.0015--0.0049 Å). The
+allowed windows at rest on a 2.75 Å lattice are therefore 0.0021--0.118
+Å (exponential), 0.0041--0.266 Å (Gaussian) and 0.0015--0.0045 Å
+(Yukawa).
+
 \hypertarget{relation-to-prior-work}{%
 \section{4. Relation to prior work}\label{relation-to-prior-work}}
 
@@ -450,7 +470,12 @@ unloaded controls; 30 days. With assumed backgrounds this reaches
 \textasciitilde{}\(10^{-26}\) (surface) and \(4\times10^{-28}\)
 (underground) per p--d pair per s, excluding screening ranges
 ≳0.12--0.16 Å for 300--575 eV in a channel the neutron searches did not
-cover.
+cover. At keV screening (notebook 15), E1 excludes ranges 1.25--1.97×
+shorter than any at which even a fully p--d-paired lattice would reach
+watts, in all 14 variants where such a region exists. Because E1
+measures the rate per p--d pair, a null result closes the
+preferential-pairing loophole of §3.5, and a 30-day surface run already
+suffices.
 
 \textbf{E2: heavy-fermion screening with a temperature switch.} d(d,p)t
 at \(E_d\) = 5--30 keV on a deuterium-implanted heavy-fermion compound
@@ -483,10 +508,10 @@ statistics, about 1.5 days per point at 1 mA.
   literature inputs were verified at abstract level; the repository's
   VERIFICATION.md lists the status of each. (v) The p+d analysis assumes
   random H/D occupancy; a lattice with strongly preferential p--d
-  pairing is not excluded. (vi) The depth-artifact analysis (§3.6) uses
-  a constant S-factor and power-law stopping, and the shape constraint
-  uses a proxy for the published uncertainties, because the individual
-  data points are not tabulated.
+  pairing is not excluded by existing data, but experiment E1 tests it
+  directly. (vi) The depth-artifact analysis (§3.6) uses a constant
+  S-factor and power-law stopping. The data fits use a digitisation of
+  the published figure, not tabulated data.
 \end{enumerate}
 
 \hypertarget{conclusions}{%
@@ -518,9 +543,9 @@ statistics, about 1.5 days per point at 1 mA.
   which experiments E1--E3 are designed to tell apart.
 \end{enumerate}
 
-\textbf{Data and code availability.} Notebooks (03, 04, 04b, 05b and 13
-reproduce every number here), the solver \texttt{cfsolve.py}, a
-claim-checking tool and figures:
+\textbf{Data and code availability.} Notebooks (03, 04, 04b, 05b, 13, 14
+and 15 reproduce every number here; digitised data in \texttt{data/}),
+the solver \texttt{cfsolve.py}, a claim-checking tool and figures:
 https://github.com/m1110/cold-fusion-gap
 
 \textbf{Acknowledgements.} Analysis code and drafting were assisted by
