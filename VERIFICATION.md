@@ -87,4 +87,4 @@ Literature (via reviews; primary not yet read) reports that deuterons in heavily
 3. The **~7–8 pm universal spacing** target across hydrogen-isotope fuels, and the p+d analysis in mixed lattices.
 4. The **E1–E3 designs**, in particular a neutron-free p+d gamma search at rest, and heavy-fermion screening with a temperature switch.
 
-- **Muon production cost** (notebook 16): ~5 GeV per muon today and ~2 GeV (Kelly et al. 2021 design) are recalled from secondary sources; beam-heat recovery fraction 0.8 is assumed. arXiv search is disallowed by robots.txt and the metadata APIs are blocked in this environment, so these still need a primary check.
+- **Muon production cost** (notebook 16): 5 GeV per muon is stated in arXiv:2511.20951 and arXiv:2605.26432 (both read in full; they cite Jändel 1989). Kelly et al. 2021 (J. Phys. Energy 3, 035003) give 2.5× lower, at abstract level, *including* waste-energy recovery. The 3.0 GeV active-target figure comes from an ARPA-E presentation (secondary). The X scenarios are from Yin et al. 2026 Table I. The Holmlid cheap-muon claim is disputed (Hansen & Engelen 2023, Energy Sustain. Soc.) and not used.

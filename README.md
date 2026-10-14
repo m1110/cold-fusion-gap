@@ -56,7 +56,7 @@ Quantitative notebooks asking one question: **how far is known physics from cold
 
 - **Notebook 14:** the published model curves are thin-target ratios. A thick-target refit of the digitised points gives *higher* screening (PdD 1.86 keV, Pd 1.08 keV). Under the published model, no depth profile can fake any positive U_e.
 - **Notebook 15:** a null E1 result closes the p–d pairing loophole for all keV screening variants, and a 30-day surface run suffices.
-- **Notebook 16:** net electricity with today's cycle needs muons at ~0.6 GeV (9× cheaper). With the sticking and cycling levers, η 0.5/0.6 and beam-heat recovery, a ~2 GeV muon source reaches gain 1.37. As a neutron source, μCF already ties spallation.
+- **Notebook 16:** net electricity with today's cycle needs muons at ~0.6 GeV (9× cheaper). With sourced scenarios (2–3 GeV per muon, polarised or "synergy" cycles), net electricity is reached only at the threshold (gain ≈ 1.0–1.1, and only at η 0.5/0.6). As a neutron source, μCF already ties spallation and wins with polarised fuel.
 
 ## Verification, experiments, papers
 
